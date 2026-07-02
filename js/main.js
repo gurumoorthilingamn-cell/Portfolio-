@@ -13,11 +13,18 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'light' : 'dark');
 });
 
-// ── Navbar scroll ─────────────────────────────────────────
+// ── Navbar scroll (passive for performance) ───────────────
 const navbar = document.getElementById('navbar');
+let ticking = false;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
 
 // ── Mobile hamburger ──────────────────────────────────────
 const hamburger = document.getElementById('hamburger');

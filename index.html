@@ -3,1130 +3,553 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gurumoorthilingam — Digital Marketing Executive & Graphic Designer</title>
-<meta name="description" content="Experienced Digital Marketing Executive and Graphic Designer specializing in social media, SEO, content strategy, and brand identity.">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-
-<!-- Iconify -->
-<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-
+<title>GURUMOORTHILINGAM — Digital Marketing Executive & Graphic Designer</title>
+<meta name="description" content="Digital Marketing Executive and Graphic Designer. Creating campaigns that convert and brands that last.">
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════ -->
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" id="navbar">
   <a href="#hero" class="nav-logo">GM.</a>
-  <ul class="nav-links" id="nav-links">
+  <ul class="nav-center" id="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#results">Results</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-actions">
-    <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
-      <iconify-icon icon="ph:sun-bold" id="theme-icon"></iconify-icon>
-    </button>
-    <a href="#contact" class="nav-cta">Hire Me</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <a href="#contact" class="nav-cta">HIRE ME ↗</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ════════════════════════════════════════
-     HERO
-════════════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-shapes">
-    <div class="h-shape h-shape-1"></div>
-    <div class="h-shape h-shape-2"></div>
-    <div class="h-shape h-shape-3"></div>
+  <div class="hero-topbar">
+    <span>GURUMOORTHILINGAM</span>
+    <div class="hero-badge"><span class="badge-dot"></span> AVAILABLE FOR PROJECTS</div>
+    <span>EST. 2021 · TAMIL NADU, IN</span>
   </div>
-  <div class="container">
-    <div class="hero-inner">
-      <!-- Left: Text -->
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Available for Projects
-        </div>
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Gurumoorthilingam</h1>
-        <div class="hero-role-wrap">
-          <span class="role-pre">I'm a </span>
-          <span id="typed-role"></span><span class="typed-cursor">|</span>
-        </div>
-        <p class="hero-intro">
-          Passionate about creating data-driven digital marketing strategies and visually compelling brand identities. I blend creative storytelling with analytical thinking to deliver campaigns that convert and designs that resonate.
-        </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary">
-            <iconify-icon icon="ph:briefcase-bold"></iconify-icon> View My Work
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <iconify-icon icon="ph:paper-plane-bold"></iconify-icon> Let's Talk
-          </a>
-          <a href="#" class="btn btn-ghost">
-            <iconify-icon icon="ph:download-bold"></iconify-icon> Resume
-          </a>
-        </div>
-      </div>
 
-      <!-- Right: Floating Cards -->
-      <div class="hero-visual">
-        <div class="hero-card-stack">
-          <div class="hero-card hero-main-card">
-            <div class="hero-profile-img">🎯</div>
-            <div class="hero-card-name">Gurumoorthilingam</div>
-            <div class="hero-card-title">Digital Marketing Executive</div>
-            <div class="hero-card-skills">
-              <span class="hero-card-skill">SEO</span>
-              <span class="hero-card-skill">Social Media</span>
-              <span class="hero-card-skill">Branding</span>
-              <span class="hero-card-skill">Design</span>
-            </div>
-          </div>
-          <div class="hero-card hero-stat-card-1">
-            <div class="hero-card-icon">📈</div>
-            <div class="hero-card-num">3+</div>
-            <div class="hero-card-label">Years Experience</div>
-          </div>
-          <div class="hero-card hero-stat-card-2">
-            <div class="hero-card-icon">🚀</div>
-            <div class="hero-card-num">50+</div>
-            <div class="hero-card-label">Campaigns Launched</div>
-          </div>
-          <div class="hero-card hero-stat-card-3">
-            <div class="hero-card-icon">✦</div>
-            <div class="hero-card-num">30+</div>
-            <div class="hero-card-label">Brands Designed</div>
-          </div>
-        </div>
-      </div>
+  <div class="hero-headline">
+    <div class="hero-line yellow">
+      <span class="hero-line-inner" data-scramble="CREATE.">CREATE.</span>
     </div>
+    <div class="hero-line outline">
+      <span class="hero-line-inner" data-scramble="MARKET.">MARKET.</span>
+    </div>
+    <div class="hero-line">
+      <span class="hero-line-inner" data-scramble="GROW.">GROW.</span>
+    </div>
+  </div>
+
+  <div class="hero-sub">
+    <p class="hero-desc">
+      <strong>Digital Marketing Executive & Graphic Designer</strong> with 3+ years crafting data-driven campaigns and brand identities that generate real business results.
+    </p>
+    <a href="#work" class="hero-scroll-btn">VIEW WORK &nbsp;↓</a>
+    <div class="hero-location">TAMIL NADU<br>INDIA</div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════ -->
+<!-- ═══ MARQUEE 1 ═══ -->
+<div class="marquee-wrap yellow">
+  <div class="marquee-track">
+    <span>DIGITAL MARKETING</span><span class="marquee-dot">✦</span>
+    <span>SEO OPTIMIZATION</span><span class="marquee-dot">✦</span>
+    <span>SOCIAL MEDIA</span><span class="marquee-dot">✦</span>
+    <span>BRAND IDENTITY</span><span class="marquee-dot">✦</span>
+    <span>GRAPHIC DESIGN</span><span class="marquee-dot">✦</span>
+    <span>PAID ADVERTISING</span><span class="marquee-dot">✦</span>
+    <span>CONTENT STRATEGY</span><span class="marquee-dot">✦</span>
+    <span>EMAIL MARKETING</span><span class="marquee-dot">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span>DIGITAL MARKETING</span><span class="marquee-dot">✦</span>
+    <span>SEO OPTIMIZATION</span><span class="marquee-dot">✦</span>
+    <span>SOCIAL MEDIA</span><span class="marquee-dot">✦</span>
+    <span>BRAND IDENTITY</span><span class="marquee-dot">✦</span>
+    <span>GRAPHIC DESIGN</span><span class="marquee-dot">✦</span>
+    <span>PAID ADVERTISING</span><span class="marquee-dot">✦</span>
+    <span>CONTENT STRATEGY</span><span class="marquee-dot">✦</span>
+    <span>EMAIL MARKETING</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
 <section class="about-section" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img-col fade-left">
-        <div class="about-photo">🎨
-          <div class="about-experience-badge">
-            <div class="about-exp-num">3+</div>
-            <div class="about-exp-label">Years Exp.</div>
-          </div>
+  <div class="section-label" data-num="01">ABOUT ME</div>
+  <div class="about-grid">
+    <div class="about-headline fade-up">
+      I BUILD BRANDS THAT <span class="acc">COMMAND</span> ATTENTION.
+    </div>
+    <div class="about-right">
+      <p class="about-text fade-up" data-delay="2">
+        With <strong>3+ years</strong> in digital marketing and graphic design, I've helped brands across industries grow their online presence, attract quality leads, and build identities that stick. My approach combines <strong>data-driven strategy</strong> with <strong>bold creative execution</strong> — because great marketing needs both.
+      </p>
+      <div class="about-stats">
+        <div class="fade-up" data-delay="1">
+          <span class="about-stat-num" data-count="50">0</span>
+          <span class="about-stat-lbl">Campaigns Launched</span>
         </div>
-      </div>
-      <div class="about-text fade-right">
-        <span class="section-badge"><iconify-icon icon="ph:user-bold"></iconify-icon> About Me</span>
-        <h2 class="section-title">Crafting <span class="grad">Digital Experiences</span> That Matter</h2>
-        <div class="section-divider"></div>
-        <p>I'm a Digital Marketing Executive and Graphic Designer with 3+ years of experience helping businesses grow their online presence and build strong brand identities. I specialize in creating integrated marketing strategies that combine creativity with data-driven insights.</p>
-        <p>My work spans SEO, social media management, content creation, paid advertising, and complete brand identity design. I believe great marketing is not just about visibility — it's about creating genuine connections with audiences that drive lasting results.</p>
-        <p>When I'm not crafting campaigns or designing visuals, I'm staying ahead of industry trends to bring the freshest ideas to every project.</p>
-        <div class="about-highlights">
-          <div class="about-highlight">SEO &amp; SEM Expert</div>
-          <div class="about-highlight">Social Media Strategy</div>
-          <div class="about-highlight">Graphic Design</div>
-          <div class="about-highlight">Content Marketing</div>
-          <div class="about-highlight">Brand Identity</div>
-          <div class="about-highlight">Data Analytics</div>
+        <div class="fade-up" data-delay="2">
+          <span class="about-stat-num" data-count="30">0</span>
+          <span class="about-stat-lbl">Brands Designed</span>
+        </div>
+        <div class="fade-up" data-delay="3">
+          <span class="about-stat-num" data-count="3">0</span>
+          <span class="about-stat-lbl">Years Experience</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     EXPERIENCE
-════════════════════════════════════════ -->
-<section id="experience" style="padding:var(--section-gap) 0;background:var(--bg)">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:briefcase-bold"></iconify-icon> Experience</span>
-      <h2 class="section-title">My <span class="grad">Professional Journey</span></h2>
-      <div class="section-divider"></div>
+<!-- ═══ MARQUEE 2 ═══ -->
+<div class="marquee-wrap rev">
+  <div class="marquee-track">
+    <span>GOOGLE ADS</span><span class="marquee-dot">◆</span>
+    <span>META ADS</span><span class="marquee-dot">◆</span>
+    <span>ANALYTICS</span><span class="marquee-dot">◆</span>
+    <span>BRANDING</span><span class="marquee-dot">◆</span>
+    <span>PHOTOSHOP</span><span class="marquee-dot">◆</span>
+    <span>ILLUSTRATOR</span><span class="marquee-dot">◆</span>
+    <span>FIGMA</span><span class="marquee-dot">◆</span>
+    <span>CANVA PRO</span><span class="marquee-dot">◆</span>
+    <span>HUBSPOT</span><span class="marquee-dot">◆</span>
+    <span>SEMRUSH</span><span class="marquee-dot">◆</span>
+    <!-- duplicate -->
+    <span>GOOGLE ADS</span><span class="marquee-dot">◆</span>
+    <span>META ADS</span><span class="marquee-dot">◆</span>
+    <span>ANALYTICS</span><span class="marquee-dot">◆</span>
+    <span>BRANDING</span><span class="marquee-dot">◆</span>
+    <span>PHOTOSHOP</span><span class="marquee-dot">◆</span>
+    <span>ILLUSTRATOR</span><span class="marquee-dot">◆</span>
+    <span>FIGMA</span><span class="marquee-dot">◆</span>
+    <span>CANVA PRO</span><span class="marquee-dot">◆</span>
+    <span>HUBSPOT</span><span class="marquee-dot">◆</span>
+    <span>SEMRUSH</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- ═══ SELECTED WORK ═══ -->
+<section class="work-section" id="work">
+  <div class="section-label" data-num="02">SELECTED WORK</div>
+  <div class="work-list">
+
+    <div class="work-item" onclick="openModal('proj1')">
+      <div class="work-num">01</div>
+      <div class="work-info">
+        <h3>E-COMMERCE SEO CAMPAIGN <span>— SEO · CONTENT · ANALYTICS</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">SEO</span>
+          <span class="work-tag">Link Building</span>
+          <span class="work-tag">Content Strategy</span>
+        </div>
+      </div>
+      <div class="work-result">+280% TRAFFIC</div>
+      <div class="work-arrow">↗</div>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item fade-up" data-delay="1">
-        <div class="timeline-header">
-          <div class="timeline-role">Digital Marketing Executive</div>
-          <div class="timeline-period">2023 – Present</div>
-        </div>
-        <div class="timeline-company">🏢 Marketing Agency / Corporate</div>
-        <p style="font-size:.87rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem">
-          Leading end-to-end digital marketing campaigns across multiple clients. Managing SEO, PPC, social media, and content strategies to achieve measurable ROI. Collaborated with cross-functional teams to build cohesive brand stories.
-        </p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">SEO/SEM</span>
-          <span class="timeline-tag">Google Ads</span>
-          <span class="timeline-tag">Meta Ads</span>
-          <span class="timeline-tag">Email Marketing</span>
-          <span class="timeline-tag">Analytics</span>
+    <div class="work-item" onclick="openModal('proj2')">
+      <div class="work-num">02</div>
+      <div class="work-info">
+        <h3>RESTAURANT SOCIAL LAUNCH <span>— SOCIAL MEDIA · META ADS</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">Social Media</span>
+          <span class="work-tag">Meta Ads</span>
+          <span class="work-tag">Content</span>
         </div>
       </div>
+      <div class="work-result">10K FOLLOWERS</div>
+      <div class="work-arrow">↗</div>
+    </div>
 
-      <div class="timeline-item fade-up" data-delay="2">
-        <div class="timeline-header">
-          <div class="timeline-role">Graphic Designer &amp; Social Media Manager</div>
-          <div class="timeline-period">2022 – 2023</div>
-        </div>
-        <div class="timeline-company">🎨 Creative Studio</div>
-        <p style="font-size:.87rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem">
-          Designed brand identities, marketing collaterals, social media graphics, and digital assets for diverse clients. Managed social media accounts and developed content calendars that increased engagement rates significantly.
-        </p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Photoshop</span>
-          <span class="timeline-tag">Illustrator</span>
-          <span class="timeline-tag">Canva Pro</span>
-          <span class="timeline-tag">Brand Design</span>
-          <span class="timeline-tag">Content Creation</span>
+    <div class="work-item" onclick="openModal('proj3')">
+      <div class="work-num">03</div>
+      <div class="work-info">
+        <h3>BRAND IDENTITY SYSTEM <span>— DESIGN · BRANDING</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">Logo Design</span>
+          <span class="work-tag">Brand Guidelines</span>
+          <span class="work-tag">Visual Identity</span>
         </div>
       </div>
+      <div class="work-result">TECH STARTUP</div>
+      <div class="work-arrow">↗</div>
+    </div>
 
-      <div class="timeline-item fade-up" data-delay="3">
-        <div class="timeline-header">
-          <div class="timeline-role">Marketing Intern</div>
-          <div class="timeline-period">2021 – 2022</div>
-        </div>
-        <div class="timeline-company">🌱 Startup Environment</div>
-        <p style="font-size:.87rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem">
-          Supported the marketing team in executing campaigns, creating content, and analyzing performance metrics. Gained hands-on experience with digital advertising platforms and marketing automation tools.
-        </p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Digital Ads</span>
-          <span class="timeline-tag">Content Writing</span>
-          <span class="timeline-tag">Social Media</span>
-          <span class="timeline-tag">Reporting</span>
+    <div class="work-item" onclick="openModal('proj4')">
+      <div class="work-num">04</div>
+      <div class="work-info">
+        <h3>PPC LEAD GENERATION <span>— GOOGLE ADS · CRO</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">Google Ads</span>
+          <span class="work-tag">PPC</span>
+          <span class="work-tag">CRO</span>
         </div>
       </div>
+      <div class="work-result">−45% CPA</div>
+      <div class="work-arrow">↗</div>
+    </div>
+
+    <div class="work-item" onclick="openModal('proj5')">
+      <div class="work-num">05</div>
+      <div class="work-info">
+        <h3>EMAIL DRIP AUTOMATION <span>— EMAIL · AUTOMATION</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">Email Marketing</span>
+          <span class="work-tag">Automation</span>
+          <span class="work-tag">Copywriting</span>
+        </div>
+      </div>
+      <div class="work-result">38% OPEN RATE</div>
+      <div class="work-arrow">↗</div>
+    </div>
+
+    <div class="work-item" onclick="openModal('proj6')">
+      <div class="work-num">06</div>
+      <div class="work-info">
+        <h3>VIDEO CONTENT STRATEGY <span>— YOUTUBE · REELS</span></h3>
+        <div class="work-tags">
+          <span class="work-tag">YouTube</span>
+          <span class="work-tag">Instagram Reels</span>
+          <span class="work-tag">Video</span>
+        </div>
+      </div>
+      <div class="work-result">500K+ VIEWS</div>
+      <div class="work-arrow">↗</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ NUMBERS ═══ -->
+<section class="numbers-section" id="numbers">
+  <div class="section-label" data-num="03">BY THE NUMBERS</div>
+  <div class="numbers-grid">
+    <div class="number-item fade-up" data-delay="1">
+      <span class="number-val" data-count="280">0</span>
+      <span class="number-lbl">% ORGANIC TRAFFIC INCREASE</span>
+    </div>
+    <div class="number-item fade-up" data-delay="2">
+      <span class="number-val" data-count="50">0</span>
+      <span class="number-lbl">+ CAMPAIGNS LAUNCHED</span>
+    </div>
+    <div class="number-item fade-up" data-delay="3">
+      <span class="number-val" data-count="10">0</span>
+      <span class="number-lbl">K FOLLOWERS GROWN FROM ZERO</span>
+    </div>
+    <div class="number-item fade-up" data-delay="4">
+      <span class="number-val" data-count="38">0</span>
+      <span class="number-lbl">% EMAIL OPEN RATE ACHIEVED</span>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     SKILLS
-════════════════════════════════════════ -->
+<!-- ═══ SERVICES ═══ -->
+<section class="services-section" id="services">
+  <div class="section-label" data-num="04">WHAT I DO</div>
+  <div class="service-row fade-up" data-delay="1">
+    <span class="service-name">SEO OPTIMIZATION</span>
+    <span class="service-arrow">↗</span>
+  </div>
+  <div class="service-row fade-up" data-delay="2">
+    <span class="service-name">SOCIAL MEDIA MANAGEMENT</span>
+    <span class="service-arrow">↗</span>
+  </div>
+  <div class="service-row fade-up" data-delay="3">
+    <span class="service-name">PAID ADVERTISING</span>
+    <span class="service-arrow">↗</span>
+  </div>
+  <div class="service-row fade-up" data-delay="4">
+    <span class="service-name">GRAPHIC DESIGN</span>
+    <span class="service-arrow">↗</span>
+  </div>
+  <div class="service-row fade-up" data-delay="5">
+    <span class="service-name">CONTENT MARKETING</span>
+    <span class="service-arrow">↗</span>
+  </div>
+  <div class="service-row fade-up" data-delay="6">
+    <span class="service-name">ANALYTICS &amp; REPORTING</span>
+    <span class="service-arrow">↗</span>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
 <section class="skills-section" id="skills">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:lightning-bold"></iconify-icon> Skills</span>
-      <h2 class="section-title">My <span class="grad">Core Capabilities</span></h2>
-      <div class="section-divider"></div>
+  <div class="section-label" data-num="05">SKILLS &amp; TOOLS</div>
+  <div class="skills-grid">
+    <div class="skill-group fade-up" data-delay="1">
+      <div class="skill-group-name">Digital Marketing</div>
+      <div class="skill-pills">
+        <span class="s-pill">SEO / SEM</span>
+        <span class="s-pill">Google Ads</span>
+        <span class="s-pill">Meta Ads</span>
+        <span class="s-pill">Email Marketing</span>
+        <span class="s-pill">A/B Testing</span>
+        <span class="s-pill">CRO</span>
+        <span class="s-pill">Marketing Automation</span>
+      </div>
     </div>
-
-    <div class="skills-grid">
-      <div class="skill-cat fade-up" data-delay="1">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">📊</div>
-          <div class="skill-cat-name">Digital Marketing</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">SEO</span>
-          <span class="skill-pill">SEM / PPC</span>
-          <span class="skill-pill">Google Ads</span>
-          <span class="skill-pill">Meta Ads</span>
-          <span class="skill-pill">Email Marketing</span>
-          <span class="skill-pill">Marketing Automation</span>
-          <span class="skill-pill">Conversion Optimization</span>
-          <span class="skill-pill">A/B Testing</span>
-        </div>
+    <div class="skill-group fade-up" data-delay="2">
+      <div class="skill-group-name">Graphic Design</div>
+      <div class="skill-pills">
+        <span class="s-pill">Adobe Photoshop</span>
+        <span class="s-pill">Adobe Illustrator</span>
+        <span class="s-pill">Adobe InDesign</span>
+        <span class="s-pill">Canva Pro</span>
+        <span class="s-pill">Figma</span>
+        <span class="s-pill">Logo Design</span>
+        <span class="s-pill">Brand Identity</span>
       </div>
-
-      <div class="skill-cat fade-up" data-delay="2">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">📱</div>
-          <div class="skill-cat-name">Social Media</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">Instagram</span>
-          <span class="skill-pill">Facebook</span>
-          <span class="skill-pill">LinkedIn</span>
-          <span class="skill-pill">YouTube</span>
-          <span class="skill-pill">Twitter / X</span>
-          <span class="skill-pill">Content Calendar</span>
-          <span class="skill-pill">Community Management</span>
-          <span class="skill-pill">Influencer Marketing</span>
-        </div>
+    </div>
+    <div class="skill-group fade-up" data-delay="3">
+      <div class="skill-group-name">Social Media</div>
+      <div class="skill-pills">
+        <span class="s-pill">Instagram</span>
+        <span class="s-pill">Facebook</span>
+        <span class="s-pill">LinkedIn</span>
+        <span class="s-pill">YouTube</span>
+        <span class="s-pill">Content Calendar</span>
+        <span class="s-pill">Influencer Marketing</span>
       </div>
-
-      <div class="skill-cat fade-up" data-delay="3">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🎨</div>
-          <div class="skill-cat-name">Graphic Design</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">Adobe Photoshop</span>
-          <span class="skill-pill">Adobe Illustrator</span>
-          <span class="skill-pill">Adobe InDesign</span>
-          <span class="skill-pill">Canva Pro</span>
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Brand Identity</span>
-          <span class="skill-pill">Logo Design</span>
-          <span class="skill-pill">Motion Graphics</span>
-        </div>
+    </div>
+    <div class="skill-group fade-up" data-delay="4">
+      <div class="skill-group-name">Analytics</div>
+      <div class="skill-pills">
+        <span class="s-pill">Google Analytics 4</span>
+        <span class="s-pill">Search Console</span>
+        <span class="s-pill">Semrush</span>
+        <span class="s-pill">Ahrefs</span>
+        <span class="s-pill">Data Studio</span>
+        <span class="s-pill">Meta Pixel</span>
       </div>
-
-      <div class="skill-cat fade-up" data-delay="4">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">✍️</div>
-          <div class="skill-cat-name">Content Strategy</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">Copywriting</span>
-          <span class="skill-pill">Blog Writing</span>
-          <span class="skill-pill">Video Scripts</span>
-          <span class="skill-pill">Brand Storytelling</span>
-          <span class="skill-pill">Content Planning</span>
-          <span class="skill-pill">SEO Content</span>
-          <span class="skill-pill">Email Copy</span>
-          <span class="skill-pill">Ad Copy</span>
-        </div>
+    </div>
+    <div class="skill-group fade-up" data-delay="5">
+      <div class="skill-group-name">Content</div>
+      <div class="skill-pills">
+        <span class="s-pill">Copywriting</span>
+        <span class="s-pill">Blog Writing</span>
+        <span class="s-pill">Video Scripts</span>
+        <span class="s-pill">Brand Storytelling</span>
+        <span class="s-pill">Ad Copy</span>
+        <span class="s-pill">Email Copy</span>
       </div>
-
-      <div class="skill-cat fade-up" data-delay="5">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">📈</div>
-          <div class="skill-cat-name">Analytics &amp; Data</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">Google Analytics 4</span>
-          <span class="skill-pill">Google Search Console</span>
-          <span class="skill-pill">Meta Pixel</span>
-          <span class="skill-pill">Data Studio</span>
-          <span class="skill-pill">Semrush</span>
-          <span class="skill-pill">Ahrefs</span>
-          <span class="skill-pill">Heatmaps</span>
-          <span class="skill-pill">ROI Reporting</span>
-        </div>
-      </div>
-
-      <div class="skill-cat fade-up" data-delay="6">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🛠️</div>
-          <div class="skill-cat-name">Tools &amp; Platforms</div>
-        </div>
-        <div class="skill-pills">
-          <span class="skill-pill">HubSpot</span>
-          <span class="skill-pill">Mailchimp</span>
-          <span class="skill-pill">Hootsuite</span>
-          <span class="skill-pill">Buffer</span>
-          <span class="skill-pill">WordPress</span>
-          <span class="skill-pill">Shopify</span>
-          <span class="skill-pill">Zapier</span>
-          <span class="skill-pill">Notion</span>
-        </div>
+    </div>
+    <div class="skill-group fade-up" data-delay="6">
+      <div class="skill-group-name">Platforms</div>
+      <div class="skill-pills">
+        <span class="s-pill">HubSpot</span>
+        <span class="s-pill">Mailchimp</span>
+        <span class="s-pill">Hootsuite</span>
+        <span class="s-pill">WordPress</span>
+        <span class="s-pill">Shopify</span>
+        <span class="s-pill">Zapier</span>
+        <span class="s-pill">Notion</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     PROJECTS
-════════════════════════════════════════ -->
-<section id="projects" style="padding:var(--section-gap) 0;background:var(--bg)">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:rocket-launch-bold"></iconify-icon> Projects</span>
-      <h2 class="section-title">Featured <span class="grad">Work &amp; Campaigns</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-sub">A selection of projects that showcase my skills in digital marketing, branding, and creative design.</p>
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-label" data-num="06">CLIENT WORDS</div>
+  <div class="testimonials-grid">
+    <div class="t-card fade-up" data-delay="1">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Guru transformed our digital presence completely. Organic traffic tripled in 6 months and lead quality improved dramatically. Highly professional — delivers exactly what he promises."</p>
+      <div class="t-author-name">Rajesh Kumar</div>
+      <div class="t-author-co">CEO · TechVenture Solutions</div>
+    </div>
+    <div class="t-card fade-up" data-delay="2">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The brand identity Guru designed is stunning. He understood our vision and translated it into a visual system that sets us apart in our market. Worth every rupee."</p>
+      <div class="t-author-name">Priya Sharma</div>
+      <div class="t-author-co">Founder · Bloom Wellness</div>
+    </div>
+    <div class="t-card fade-up" data-delay="3">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Our social media engagement exploded. From nearly zero following to 10K engaged fans in 3 months. His content strategy is both creative and data-driven — rare combination."</p>
+      <div class="t-author-name">Arun Krishnamurthy</div>
+      <div class="t-author-co">Owner · Spice Route Restaurant</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section" id="contact">
+  <div class="contact-bg-text">LET'S WORK TOGETHER LET'S WORK TOGETHER LET'S WORK TOGETHER</div>
+  <div class="contact-inner">
+    <div class="section-label" data-num="07">GET IN TOUCH</div>
+    <div class="contact-headline fade-up">
+      <div class="y">LET'S CREATE</div>
+      <div class="o">SOMETHING</div>
+      <div>REMARKABLE.</div>
+    </div>
+    <div class="contact-row">
+      <a class="contact-email fade-up" href="mailto:gurumoorthilingam@email.com">
+        gurumoorthilingam@email.com
+      </a>
+      <a class="contact-cta-btn fade-up" data-delay="2" href="mailto:gurumoorthilingam@email.com">
+        START A PROJECT &nbsp;↗
+      </a>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card fade-up" data-delay="1" onclick="openModal('proj1')">
-        <div class="project-thumb proj-bg-1">📊</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">SEO</span>
-            <span class="project-tag">Content</span>
-            <span class="project-tag">Analytics</span>
-          </div>
-          <h3>E-Commerce SEO Growth Campaign</h3>
-          <p>Boosted organic traffic by 280% for a retail brand through technical SEO overhaul, content strategy, and structured link-building program.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
+    <div style="display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap" class="fade-up">
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem">PHONE</div>
+        <div style="font-size:.95rem">+91 9XXXXXXXXX</div>
       </div>
-
-      <div class="project-card fade-up" data-delay="2" onclick="openModal('proj2')">
-        <div class="project-thumb proj-bg-2">📱</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Social Media</span>
-            <span class="project-tag">Meta Ads</span>
-          </div>
-          <h3>Restaurant Brand Social Media Launch</h3>
-          <p>Built a social media presence from scratch for a new restaurant chain — growing to 10K followers in 3 months with a 4.5% engagement rate.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem">LINKEDIN</div>
+        <div style="font-size:.95rem">linkedin.com/in/gurumoorthilingam</div>
       </div>
-
-      <div class="project-card fade-up" data-delay="3" onclick="openModal('proj3')">
-        <div class="project-thumb proj-bg-3">🎨</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Brand Identity</span>
-            <span class="project-tag">Design</span>
-          </div>
-          <h3>Complete Brand Identity System</h3>
-          <p>Designed a full brand identity for a tech startup — logo, color palette, typography, business stationery, and complete brand guidelines document.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem">INSTAGRAM</div>
+        <div style="font-size:.95rem">@guru.designs</div>
       </div>
-
-      <div class="project-card fade-up" data-delay="4" onclick="openModal('proj4')">
-        <div class="project-thumb proj-bg-4">🎯</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Google Ads</span>
-            <span class="project-tag">PPC</span>
-          </div>
-          <h3>PPC Lead Generation Campaign</h3>
-          <p>Managed a Google Ads campaign that reduced CPA by 45% while increasing qualified leads by 190% for a B2B services company.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
-      </div>
-
-      <div class="project-card fade-up" data-delay="5" onclick="openModal('proj5')">
-        <div class="project-thumb proj-bg-5">📧</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Email Marketing</span>
-            <span class="project-tag">Automation</span>
-          </div>
-          <h3>Email Drip Campaign — 38% Open Rate</h3>
-          <p>Designed and executed an automated email sequence with 38% open rate and 12% click-through rate, generating consistent monthly recurring revenue.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
-      </div>
-
-      <div class="project-card fade-up" data-delay="6" onclick="openModal('proj6')">
-        <div class="project-thumb proj-bg-6">🎬</div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="project-tag">Video</span>
-            <span class="project-tag">Content</span>
-            <span class="project-tag">YouTube</span>
-          </div>
-          <h3>YouTube &amp; Reel Content Strategy</h3>
-          <p>Created and managed a multi-platform video content strategy resulting in 500K+ views across YouTube and Instagram Reels within 6 months.</p>
-          <span class="project-arrow">View Case Study <iconify-icon icon="ph:arrow-right-bold"></iconify-icon></span>
-        </div>
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem">LOCATION</div>
+        <div style="font-size:.95rem">Tamil Nadu, India</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-logo">GM.</div>
+  <div class="foot-copy">© 2024 GURUMOORTHILINGAM · ALL RIGHTS RESERVED</div>
+  <div class="foot-socials">
+    <a href="#">LINKEDIN</a>
+    <a href="#">INSTAGRAM</a>
+    <a href="#">BEHANCE</a>
+    <a href="#">TWITTER</a>
+  </div>
+</footer>
 
 <!-- PROJECT MODALS -->
 <div class="modal-overlay" id="modal-proj1" onclick="closeModalOutside(event,'modal-proj1')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj1')">✕</button>
-    <div class="modal-icon">📊</div>
-    <h2>E-Commerce SEO Growth Campaign</h2>
-    <p class="modal-sub">SEO · Content Strategy · Analytics</p>
-    <p>A comprehensive 6-month SEO campaign for an e-commerce retailer facing declining organic traffic. The project involved a complete technical SEO audit, content gap analysis, and systematic link acquisition.</p>
+    <div class="modal-num">01</div>
+    <h2>E-COMMERCE SEO CAMPAIGN</h2>
+    <p class="modal-sub">SEO · CONTENT STRATEGY · ANALYTICS</p>
+    <p>A 6-month comprehensive SEO overhaul for an e-commerce retailer with declining organic traffic. Full technical audit, content gap analysis, and a systematic link acquisition program.</p>
     <ul class="modal-list">
-      <li>Performed full technical SEO audit and fixed 200+ on-page issues</li>
-      <li>Developed a 60-piece content calendar targeting high-intent keywords</li>
-      <li>Built 80+ high-quality backlinks through digital PR</li>
+      <li>Technical SEO audit fixing 200+ on-page issues</li>
+      <li>60-piece content calendar targeting high-intent keywords</li>
+      <li>80+ high-quality backlinks via digital PR</li>
       <li>Organic traffic increased by 280% in 6 months</li>
       <li>Revenue from organic channel grew by 190%</li>
       <li>Top 3 rankings for 45 target keywords</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj1')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj1')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-proj2" onclick="closeModalOutside(event,'modal-proj2')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj2')">✕</button>
-    <div class="modal-icon">📱</div>
-    <h2>Restaurant Brand Social Media Launch</h2>
-    <p class="modal-sub">Social Media · Meta Ads · Content Creation</p>
-    <p>Built a complete social media presence from zero for a new restaurant chain across Instagram and Facebook. Created the visual identity for social, content strategy, and ran paid campaigns to accelerate growth.</p>
+    <div class="modal-num">02</div>
+    <h2>RESTAURANT SOCIAL LAUNCH</h2>
+    <p class="modal-sub">SOCIAL MEDIA · META ADS · CONTENT CREATION</p>
+    <p>Built a complete social presence from zero for a new restaurant chain across Instagram and Facebook. Visual identity for social, content strategy, and paid campaigns to accelerate growth.</p>
     <ul class="modal-list">
-      <li>Developed brand voice, visual templates, and content style guide</li>
-      <li>Grew from 0 to 10,000 followers in 90 days</li>
-      <li>Achieved 4.5% average engagement rate (vs 1.2% industry average)</li>
+      <li>Brand voice, visual templates, and content style guide</li>
+      <li>Grew 0 → 10,000 followers in 90 days</li>
+      <li>4.5% average engagement rate vs 1.2% industry average</li>
       <li>Meta Ads reached 200K+ people with ROAS of 4.8x</li>
-      <li>Created 120+ pieces of original content</li>
-      <li>Managed influencer collaborations with 5 local food bloggers</li>
+      <li>120+ pieces of original content created</li>
+      <li>5 local influencer collaborations managed</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj2')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj2')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-proj3" onclick="closeModalOutside(event,'modal-proj3')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj3')">✕</button>
-    <div class="modal-icon">🎨</div>
-    <h2>Complete Brand Identity System</h2>
-    <p class="modal-sub">Brand Identity · Logo Design · Visual Design</p>
-    <p>Designed a comprehensive brand identity for a B2B tech startup from the ground up — encompassing strategy, visual language, and all brand touchpoints.</p>
+    <div class="modal-num">03</div>
+    <h2>BRAND IDENTITY SYSTEM</h2>
+    <p class="modal-sub">BRAND IDENTITY · LOGO DESIGN · VISUAL DESIGN</p>
+    <p>Complete brand identity for a B2B tech startup from the ground up — strategy, visual language, and all brand touchpoints for a cohesive, market-ready brand.</p>
     <ul class="modal-list">
-      <li>Logo design with full variation set (primary, secondary, monochrome, favicon)</li>
+      <li>Logo design with full variation set (primary, secondary, mono, favicon)</li>
       <li>Color system with primary, secondary, and neutral palettes</li>
       <li>Typography hierarchy with selected typeface pairings</li>
       <li>Business card, letterhead, and email signature templates</li>
       <li>Social media kit with 20+ customizable templates</li>
       <li>65-page brand guidelines document</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj3')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj3')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-proj4" onclick="closeModalOutside(event,'modal-proj4')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj4')">✕</button>
-    <div class="modal-icon">🎯</div>
-    <h2>PPC Lead Generation Campaign</h2>
-    <p class="modal-sub">Google Ads · PPC Strategy · Conversion Optimization</p>
-    <p>Took over an underperforming Google Ads account for a B2B services company. Restructured the account architecture, refined targeting, and optimized landing pages to dramatically improve performance.</p>
+    <div class="modal-num">04</div>
+    <h2>PPC LEAD GENERATION</h2>
+    <p class="modal-sub">GOOGLE ADS · PPC STRATEGY · CONVERSION OPTIMIZATION</p>
+    <p>Took over an underperforming Google Ads account for a B2B services company. Restructured account architecture, refined targeting, and optimized landing pages for dramatic improvement.</p>
     <ul class="modal-list">
       <li>Full Google Ads account audit and restructure</li>
       <li>Reduced cost per acquisition (CPA) by 45%</li>
       <li>Increased qualified leads by 190% in 4 months</li>
       <li>CTR improved from 1.8% to 5.2%</li>
       <li>Quality Score improved from 4.2 to 8.1 average</li>
-      <li>Optimized 8 landing pages for conversion rate</li>
+      <li>8 landing pages optimized for conversion rate</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj4')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj4')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-proj5" onclick="closeModalOutside(event,'modal-proj5')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj5')">✕</button>
-    <div class="modal-icon">📧</div>
-    <h2>Email Drip Campaign — 38% Open Rate</h2>
-    <p class="modal-sub">Email Marketing · Marketing Automation · Copywriting</p>
-    <p>Designed an end-to-end automated email nurture sequence for a SaaS product. Segmented the audience, crafted personalized sequences, and tested every element systematically.</p>
+    <div class="modal-num">05</div>
+    <h2>EMAIL DRIP AUTOMATION</h2>
+    <p class="modal-sub">EMAIL MARKETING · AUTOMATION · COPYWRITING</p>
+    <p>Automated email nurture sequence for a SaaS product. Audience segmented, personalized sequences crafted, and every element tested systematically to maximize performance.</p>
     <ul class="modal-list">
       <li>Audience segmentation into 5 distinct personas</li>
       <li>12-step nurture sequence over 30 days</li>
-      <li>38% average open rate (industry avg: 21%)</li>
-      <li>12% click-through rate (industry avg: 3.5%)</li>
-      <li>Generated significant attributed revenue monthly</li>
-      <li>Reduced churn by 22% through re-engagement flows</li>
+      <li>38% average open rate vs 21% industry average</li>
+      <li>12% click-through rate vs 3.5% industry average</li>
+      <li>Significant attributed revenue generated monthly</li>
+      <li>Churn reduced by 22% through re-engagement flows</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj5')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj5')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-proj6" onclick="closeModalOutside(event,'modal-proj6')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-proj6')">✕</button>
-    <div class="modal-icon">🎬</div>
-    <h2>YouTube &amp; Reel Content Strategy</h2>
-    <p class="modal-sub">Video Marketing · YouTube · Instagram Reels</p>
-    <p>Built a multi-platform short and long-form video content machine for a lifestyle brand, covering strategy, scripting, creative direction, and performance optimization.</p>
+    <div class="modal-num">06</div>
+    <h2>VIDEO CONTENT STRATEGY</h2>
+    <p class="modal-sub">VIDEO MARKETING · YOUTUBE · INSTAGRAM REELS</p>
+    <p>Multi-platform short and long-form video content strategy for a lifestyle brand, covering strategy, scripting, creative direction, and performance optimization.</p>
     <ul class="modal-list">
-      <li>Developed 6-month video content calendar</li>
+      <li>6-month video content calendar developed</li>
       <li>500K+ total views across YouTube and Instagram Reels</li>
       <li>YouTube channel grew from 500 to 18,000 subscribers</li>
       <li>Reels averaged 80K+ views per post</li>
-      <li>3 videos went viral, each crossing 100K views</li>
-      <li>Video content contributed to 35% increase in website traffic</li>
+      <li>3 viral videos each crossing 100K views</li>
+      <li>35% increase in website traffic from video content</li>
     </ul>
-    <a href="#contact" class="btn btn-primary" onclick="closeModal('modal-proj6')">Work With Me</a>
+    <a href="#contact" class="modal-cta" onclick="closeModal('modal-proj6')">START SIMILAR PROJECT →</a>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     GALLERY
-════════════════════════════════════════ -->
-<section class="gallery-section" id="gallery">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:2.5rem">
-      <span class="section-badge"><iconify-icon icon="ph:images-bold"></iconify-icon> Gallery</span>
-      <h2 class="section-title">Creative <span class="grad">Design Portfolio</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="gallery-filters fade-up">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="social">Social Media</button>
-      <button class="filter-btn" data-filter="brand">Branding</button>
-      <button class="filter-btn" data-filter="print">Print</button>
-      <button class="filter-btn" data-filter="digital">Digital Ads</button>
-    </div>
-
-    <div class="gallery-grid" id="gallery-grid">
-      <div class="gallery-item" data-cat="social" onclick="openLightbox(0)">
-        <div class="gallery-placeholder gal-1" style="height:200px">
-          <iconify-icon icon="ph:instagram-logo-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Instagram Campaign — Fashion</div>
-      </div>
-      <div class="gallery-item" data-cat="brand" onclick="openLightbox(1)">
-        <div class="gallery-placeholder gal-2" style="height:260px">
-          <iconify-icon icon="ph:crown-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Logo &amp; Brand Identity</div>
-      </div>
-      <div class="gallery-item" data-cat="digital" onclick="openLightbox(2)">
-        <div class="gallery-placeholder gal-3" style="height:180px">
-          <iconify-icon icon="ph:megaphone-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Google Display Ad Set</div>
-      </div>
-      <div class="gallery-item" data-cat="social" onclick="openLightbox(3)">
-        <div class="gallery-placeholder gal-4" style="height:240px">
-          <iconify-icon icon="ph:chart-line-up-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Social Media Dashboard Post</div>
-      </div>
-      <div class="gallery-item" data-cat="print" onclick="openLightbox(4)">
-        <div class="gallery-placeholder gal-5" style="height:200px">
-          <iconify-icon icon="ph:newspaper-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Brochure Design</div>
-      </div>
-      <div class="gallery-item" data-cat="brand" onclick="openLightbox(5)">
-        <div class="gallery-placeholder gal-6" style="height:280px">
-          <iconify-icon icon="ph:palette-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Brand Color System</div>
-      </div>
-      <div class="gallery-item" data-cat="digital" onclick="openLightbox(6)">
-        <div class="gallery-placeholder gal-7" style="height:180px">
-          <iconify-icon icon="ph:device-mobile-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Mobile Ad Creatives</div>
-      </div>
-      <div class="gallery-item" data-cat="social" onclick="openLightbox(7)">
-        <div class="gallery-placeholder gal-8" style="height:220px">
-          <iconify-icon icon="ph:video-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Reels Thumbnail Series</div>
-      </div>
-      <div class="gallery-item" data-cat="print" onclick="openLightbox(8)">
-        <div class="gallery-placeholder gal-9" style="height:200px">
-          <iconify-icon icon="ph:ticket-bold" style="font-size:2.5rem;color:rgba(255,255,255,.6)"></iconify-icon>
-        </div>
-        <div class="gallery-label">Event Poster Design</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close">✕</button>
-  <div class="lightbox-inner" id="lightbox-inner" onclick="event.stopPropagation()"></div>
-</div>
-
-<!-- ════════════════════════════════════════
-     RESULTS
-════════════════════════════════════════ -->
-<section class="results-section" id="results">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:trend-up-bold"></iconify-icon> Results</span>
-      <h2 class="section-title">Marketing <span class="grad">Results That Speak</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-sub">Real numbers from real campaigns — every metric backed by analytics data.</p>
-    </div>
-
-    <div class="results-grid">
-      <div class="result-card fade-up" data-delay="1">
-        <div class="result-card-header">
-          <div class="result-icon ri-blue">🔍</div>
-          <h3>SEO Performance</h3>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Organic Traffic Growth</span><span>+280%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="94"></div></div>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Keyword Rankings (Top 10)</span><span>45 Keywords</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="78"></div></div>
-        </div>
-        <div class="result-stats">
-          <div class="result-stat"><div class="num" data-count="280">0</div><div class="lbl">% Traffic ↑</div></div>
-          <div class="result-stat"><div class="num" data-count="45">0</div><div class="lbl">Top 10 KWs</div></div>
-          <div class="result-stat"><div class="num" data-count="190">0</div><div class="lbl">% Revenue ↑</div></div>
-        </div>
-      </div>
-
-      <div class="result-card fade-up" data-delay="2">
-        <div class="result-card-header">
-          <div class="result-icon ri-green">📱</div>
-          <h3>Social Media Growth</h3>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Follower Growth</span><span>+400%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Engagement Rate</span><span>4.5%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="72"></div></div>
-        </div>
-        <div class="result-stats">
-          <div class="result-stat"><div class="num" data-count="10">0</div><div class="lbl">K Followers</div></div>
-          <div class="result-stat"><div class="num" data-count="4">0</div><div class="lbl">% Engagement</div></div>
-          <div class="result-stat"><div class="num" data-count="50">0</div><div class="lbl">+ Campaigns</div></div>
-        </div>
-      </div>
-
-      <div class="result-card fade-up" data-delay="3">
-        <div class="result-card-header">
-          <div class="result-icon ri-purple">🎯</div>
-          <h3>Paid Advertising</h3>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>ROAS (Return on Ad Spend)</span><span>4.8x</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>CPA Reduction</span><span>-45%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="82"></div></div>
-        </div>
-        <div class="result-stats">
-          <div class="result-stat"><div class="num" data-count="45">0</div><div class="lbl">% CPA ↓</div></div>
-          <div class="result-stat"><div class="num" data-count="190">0</div><div class="lbl">% Leads ↑</div></div>
-          <div class="result-stat"><div class="num" data-count="5">0</div><div class="lbl">x ROAS</div></div>
-        </div>
-      </div>
-
-      <div class="result-card fade-up" data-delay="4">
-        <div class="result-card-header">
-          <div class="result-icon ri-orange">📧</div>
-          <h3>Email Marketing</h3>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Open Rate</span><span>38%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
-        </div>
-        <div class="result-progress">
-          <div class="progress-label"><span>Click-Through Rate</span><span>12%</span></div>
-          <div class="progress-bar"><div class="progress-fill" data-width="70"></div></div>
-        </div>
-        <div class="result-stats">
-          <div class="result-stat"><div class="num" data-count="38">0</div><div class="lbl">% Open Rate</div></div>
-          <div class="result-stat"><div class="num" data-count="12">0</div><div class="lbl">% CTR</div></div>
-          <div class="result-stat"><div class="num" data-count="22">0</div><div class="lbl">% Churn ↓</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     SERVICES
-════════════════════════════════════════ -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:sparkle-bold"></iconify-icon> Services</span>
-      <h2 class="section-title">What I <span class="grad">Offer</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card fade-up" data-delay="1">
-        <div class="service-icon">🔍</div>
-        <h3>SEO Optimization</h3>
-        <p>Technical SEO audits, on-page optimization, content strategy, and link building to dominate search rankings.</p>
-      </div>
-      <div class="service-card fade-up" data-delay="2">
-        <div class="service-icon">📱</div>
-        <h3>Social Media Management</h3>
-        <p>End-to-end management of your social presence — strategy, content creation, scheduling, and community growth.</p>
-      </div>
-      <div class="service-card fade-up" data-delay="3">
-        <div class="service-icon">🎯</div>
-        <h3>Paid Advertising</h3>
-        <p>Data-driven Google Ads and Meta Ads campaigns designed to maximize ROI and generate high-quality leads.</p>
-      </div>
-      <div class="service-card fade-up" data-delay="4">
-        <div class="service-icon">🎨</div>
-        <h3>Graphic Design</h3>
-        <p>From logos to full brand systems — visually compelling designs that communicate your brand's personality.</p>
-      </div>
-      <div class="service-card fade-up" data-delay="5">
-        <div class="service-icon">✍️</div>
-        <h3>Content Marketing</h3>
-        <p>Blogs, scripts, email copy, and ad creatives — strategic content that attracts, engages, and converts.</p>
-      </div>
-      <div class="service-card fade-up" data-delay="6">
-        <div class="service-icon">📊</div>
-        <h3>Analytics &amp; Reporting</h3>
-        <p>Clear, actionable insights from your data — dashboards, monthly reports, and strategic recommendations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     WHY WORK WITH ME
-════════════════════════════════════════ -->
-<section class="why-section" id="why">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:star-bold"></iconify-icon> Why Me</span>
-      <h2 class="section-title">Why <span class="grad">Work With Me</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="why-grid">
-      <div class="why-card fade-up" data-delay="1">
-        <div class="why-icon">🎯</div>
-        <h3>Results-Driven</h3>
-        <p>Every strategy I design is anchored in measurable goals. I don't just create — I deliver outcomes you can see in your analytics.</p>
-      </div>
-      <div class="why-card fade-up" data-delay="2">
-        <div class="why-icon">💡</div>
-        <h3>Creative + Strategic</h3>
-        <p>I combine right-brain creativity with left-brain analytics — your campaigns will be both compelling and data-backed.</p>
-      </div>
-      <div class="why-card fade-up" data-delay="3">
-        <div class="why-icon">⚡</div>
-        <h3>Fast Turnaround</h3>
-        <p>Reliable, on-time delivery without compromising quality. I respect your deadlines as much as you do.</p>
-      </div>
-      <div class="why-card fade-up" data-delay="4">
-        <div class="why-icon">🔄</div>
-        <h3>Full Funnel Thinking</h3>
-        <p>I optimize the entire customer journey — from first click to conversion and beyond into retention and advocacy.</p>
-      </div>
-      <div class="why-card fade-up" data-delay="5">
-        <div class="why-icon">🤝</div>
-        <h3>Transparent Communication</h3>
-        <p>No jargon, no mystery. Clear reporting, regular updates, and always accessible when you need me.</p>
-      </div>
-      <div class="why-card fade-up" data-delay="6">
-        <div class="why-icon">📈</div>
-        <h3>Continuous Learning</h3>
-        <p>Marketing evolves daily. I stay updated with the latest trends, algorithm changes, and best practices so you don't have to.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     TESTIMONIALS
-════════════════════════════════════════ -->
-<section class="testimonials-section" id="testimonials">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:chat-dots-bold"></iconify-icon> Testimonials</span>
-      <h2 class="section-title">What <span class="grad">Clients Say</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-up" data-delay="1">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Guru transformed our digital presence completely. Our organic traffic tripled in 6 months and the quality of leads improved dramatically. Highly professional and delivers what he promises."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">R</div>
-          <div>
-            <div class="testimonial-name">Rajesh Kumar</div>
-            <div class="testimonial-company">CEO, TechVenture Solutions</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-up" data-delay="2">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"The brand identity Guru designed for us is stunning. He understood our vision perfectly and translated it into a visual system that sets us apart in our market. Worth every penny!"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">P</div>
-          <div>
-            <div class="testimonial-name">Priya Sharma</div>
-            <div class="testimonial-company">Founder, Bloom Wellness</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-up" data-delay="3">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Our social media engagement exploded after working with Guru. From barely any following to 10K engaged fans in 3 months. His content strategy is genuinely creative and strategic at the same time."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
-          <div>
-            <div class="testimonial-name">Arun Krishnamurthy</div>
-            <div class="testimonial-company">Owner, Spice Route Restaurant</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     CERTIFICATIONS
-════════════════════════════════════════ -->
-<section class="cert-section" id="certifications">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:certificate-bold"></iconify-icon> Certifications</span>
-      <h2 class="section-title">Professional <span class="grad">Certifications</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="cert-grid">
-      <div class="cert-card fade-up" data-delay="1">
-        <div class="cert-icon">🎓</div>
-        <h3>Google Ads Certified</h3>
-        <p>Search, Display &amp; Shopping</p>
-        <span class="cert-badge">Google</span>
-      </div>
-      <div class="cert-card fade-up" data-delay="2">
-        <div class="cert-icon">📊</div>
-        <h3>Google Analytics 4</h3>
-        <p>Certified Professional</p>
-        <span class="cert-badge">Google</span>
-      </div>
-      <div class="cert-card fade-up" data-delay="3">
-        <div class="cert-icon">📘</div>
-        <h3>Meta Blueprint</h3>
-        <p>Facebook Ads Certification</p>
-        <span class="cert-badge">Meta</span>
-      </div>
-      <div class="cert-card fade-up" data-delay="4">
-        <div class="cert-icon">🔗</div>
-        <h3>HubSpot Inbound</h3>
-        <p>Marketing Certification</p>
-        <span class="cert-badge">HubSpot</span>
-      </div>
-      <div class="cert-card fade-up" data-delay="5">
-        <div class="cert-icon">📧</div>
-        <h3>Email Marketing</h3>
-        <p>Certification — HubSpot</p>
-        <span class="cert-badge">HubSpot</span>
-      </div>
-      <div class="cert-card fade-up" data-delay="6">
-        <div class="cert-icon">🔍</div>
-        <h3>SEO Fundamentals</h3>
-        <p>Semrush Academy</p>
-        <span class="cert-badge">Semrush</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     EDUCATION
-════════════════════════════════════════ -->
-<section class="edu-section" id="education">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:graduation-cap-bold"></iconify-icon> Education</span>
-      <h2 class="section-title">Academic <span class="grad">Background</span></h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="edu-card fade-up">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-degree">Bachelor of Business Administration</div>
-      <div class="edu-field">Marketing &amp; Communications</div>
-      <div class="edu-school">Anna University / Affiliated College, Tamil Nadu</div>
-      <div style="margin-bottom:1.5rem;color:var(--text-muted);font-size:.85rem">2019 – 2022</div>
-      <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
-        <span class="edu-gpa">🏆 Distinction Graduate</span>
-        <span style="padding:.5rem 1.5rem;background:var(--bg-2);border:1px solid var(--border);border-radius:99px;font-size:.85rem;color:var(--text-muted)">Marketing Specialization</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     TOOLS CLOUD
-════════════════════════════════════════ -->
-<section class="tools-section" id="tools">
-  <div class="container">
-    <div class="section-header-center fade-up" style="margin-bottom:3rem">
-      <span class="section-badge"><iconify-icon icon="ph:wrench-bold"></iconify-icon> Tools</span>
-      <h2 class="section-title">My <span class="grad">Toolkit</span></h2>
-      <div class="section-divider"></div>
-      <p class="section-sub">The platforms and tools I use daily to deliver exceptional results.</p>
-    </div>
-
-    <div class="tools-cloud fade-up">
-      <span class="tool-pill" style="animation-duration:8s"><span class="tool-icon">📊</span>Google Analytics 4</span>
-      <span class="tool-pill" style="animation-duration:10s;animation-delay:.5s"><span class="tool-icon">🔍</span>Google Ads</span>
-      <span class="tool-pill" style="animation-duration:7s;animation-delay:1s"><span class="tool-icon">🔵</span>Meta Ads Manager</span>
-      <span class="tool-pill" style="animation-duration:9s;animation-delay:1.5s"><span class="tool-icon">📧</span>Mailchimp</span>
-      <span class="tool-pill" style="animation-duration:6s;animation-delay:2s"><span class="tool-icon">🟠</span>HubSpot</span>
-      <span class="tool-pill" style="animation-duration:11s;animation-delay:2.5s"><span class="tool-icon">🎨</span>Adobe Photoshop</span>
-      <span class="tool-pill" style="animation-duration:8.5s;animation-delay:.3s"><span class="tool-icon">✏️</span>Adobe Illustrator</span>
-      <span class="tool-pill" style="animation-duration:9.5s;animation-delay:.8s"><span class="tool-icon">🖼️</span>Canva Pro</span>
-      <span class="tool-pill" style="animation-duration:7.5s;animation-delay:1.2s"><span class="tool-icon">🎭</span>Figma</span>
-      <span class="tool-pill" style="animation-duration:6.5s;animation-delay:1.8s"><span class="tool-icon">🐦</span>Buffer</span>
-      <span class="tool-pill" style="animation-duration:10.5s;animation-delay:2.2s"><span class="tool-icon">🦉</span>Hootsuite</span>
-      <span class="tool-pill" style="animation-duration:8s;animation-delay:.6s"><span class="tool-icon">🔎</span>Semrush</span>
-      <span class="tool-pill" style="animation-duration:9s;animation-delay:1.4s"><span class="tool-icon">🔗</span>Ahrefs</span>
-      <span class="tool-pill" style="animation-duration:7s;animation-delay:2s"><span class="tool-icon">🌐</span>WordPress</span>
-      <span class="tool-pill" style="animation-duration:11s;animation-delay:.9s"><span class="tool-icon">🛒</span>Shopify</span>
-      <span class="tool-pill" style="animation-duration:8.5s;animation-delay:1.6s"><span class="tool-icon">⚡</span>Zapier</span>
-      <span class="tool-pill" style="animation-duration:6.5s;animation-delay:2.4s"><span class="tool-icon">📋</span>Notion</span>
-      <span class="tool-pill" style="animation-duration:9.5s;animation-delay:.4s"><span class="tool-icon">📊</span>Data Studio</span>
-      <span class="tool-pill" style="animation-duration:7.5s;animation-delay:1.1s"><span class="tool-icon">🎬</span>CapCut</span>
-      <span class="tool-pill" style="animation-duration:10s;animation-delay:1.9s"><span class="tool-icon">💼</span>LinkedIn Ads</span>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     CONTACT
-════════════════════════════════════════ -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="contact-cta-box fade-up">
-      <h2>Ready to Grow Your Brand?</h2>
-      <p>Let's collaborate to build a marketing strategy that drives real results. Whether you need SEO, social media, design, or a complete digital overhaul — I'm here to help.</p>
-      <div class="contact-cta-btns">
-        <a href="mailto:gurumoorthilingam@email.com" class="btn btn-white">
-          <iconify-icon icon="ph:envelope-bold"></iconify-icon> Email Me
-        </a>
-        <a href="#contact" class="btn btn-outline-white">
-          <iconify-icon icon="ph:whatsapp-logo-bold"></iconify-icon> WhatsApp
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-wrap">
-      <div>
-        <span class="section-badge"><iconify-icon icon="ph:chat-bold"></iconify-icon> Get in Touch</span>
-        <h2 class="section-title" style="margin-top:.5rem">Let's <span class="grad">Start a Conversation</span></h2>
-        <div class="section-divider"></div>
-        <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:1.5rem">
-          Have a project in mind? I'd love to hear about it. Fill in the form or reach me directly through any of the channels below.
-        </p>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:gurumoorthilingam@email.com">
-            <iconify-icon icon="ph:envelope-bold" style="color:var(--primary);font-size:1.2rem"></iconify-icon>
-            gurumoorthilingam@email.com
-          </a>
-          <a class="contact-link" href="#">
-            <iconify-icon icon="ph:phone-bold" style="color:var(--primary);font-size:1.2rem"></iconify-icon>
-            +91 9XXXXXXXXX
-          </a>
-          <a class="contact-link" href="#">
-            <iconify-icon icon="ph:linkedin-logo-bold" style="color:var(--primary);font-size:1.2rem"></iconify-icon>
-            linkedin.com/in/gurumoorthilingam
-          </a>
-          <a class="contact-link" href="#">
-            <iconify-icon icon="ph:instagram-logo-bold" style="color:var(--primary);font-size:1.2rem"></iconify-icon>
-            @guru.designs
-          </a>
-          <a class="contact-link" href="#">
-            <iconify-icon icon="ph:map-pin-bold" style="color:var(--primary);font-size:1.2rem"></iconify-icon>
-            Tamil Nadu, India
-          </a>
-        </div>
-      </div>
-
-      <form class="contact-form glass-card fade-up" id="contact-form" style="padding:2rem">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input class="form-input" type="text" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-input" type="text" placeholder="Last name" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input class="form-input" type="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>Service Needed</label>
-          <select class="form-input">
-            <option value="">Select a service...</option>
-            <option>SEO Optimization</option>
-            <option>Social Media Management</option>
-            <option>Paid Advertising</option>
-            <option>Graphic Design</option>
-            <option>Content Marketing</option>
-            <option>Full Digital Marketing Strategy</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project, goals, and timeline..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
-          <iconify-icon icon="ph:paper-plane-bold"></iconify-icon>
-          <span id="submit-btn-text">Send Message</span>
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════ -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo" style="font-size:1.5rem">GM.</a>
-        <p>Digital Marketing Executive &amp; Graphic Designer. Helping businesses grow their digital presence and build brands that connect.</p>
-        <div class="footer-socials">
-          <a class="social-btn" href="#" title="LinkedIn"><iconify-icon icon="ph:linkedin-logo-bold"></iconify-icon></a>
-          <a class="social-btn" href="#" title="Instagram"><iconify-icon icon="ph:instagram-logo-bold"></iconify-icon></a>
-          <a class="social-btn" href="#" title="Behance"><iconify-icon icon="ph:behance-logo-bold"></iconify-icon></a>
-          <a class="social-btn" href="#" title="Twitter"><iconify-icon icon="ph:twitter-logo-bold"></iconify-icon></a>
-          <a class="social-btn" href="#" title="WhatsApp"><iconify-icon icon="ph:whatsapp-logo-bold"></iconify-icon></a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-heading">Services</div>
-        <div class="footer-links">
-          <a href="#services">SEO Optimization</a>
-          <a href="#services">Social Media Management</a>
-          <a href="#services">Paid Advertising</a>
-          <a href="#services">Graphic Design</a>
-          <a href="#services">Content Marketing</a>
-          <a href="#services">Analytics &amp; Reporting</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-heading">Quick Links</div>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#results">Results</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2024 <span class="grad">Gurumoorthilingam</span>. All rights reserved.</span>
-      <span>Made with ❤️ in Tamil Nadu, India</span>
-    </div>
-  </div>
-</footer>
-
-<script src="js/hero-animation.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

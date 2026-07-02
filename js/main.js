@@ -1,181 +1,173 @@
-// ── Dark / Light Mode ─────────────────────────────────────
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon   = document.getElementById('theme-icon');
-const savedTheme  = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
-  document.documentElement.setAttribute('data-theme', 'dark');
-  themeIcon.setAttribute('icon', 'ph:moon-bold');
-}
-themeToggle.addEventListener('click', () => {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  themeIcon.setAttribute('icon', isDark ? 'ph:sun-bold' : 'ph:moon-bold');
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
-});
+// ══════════════════════════════════════════════════
+//  CUSTOM CURSOR
+// ══════════════════════════════════════════════════
+const dot      = document.getElementById('cursor-dot');
+const ring     = document.getElementById('cursor-ring');
+let mouseX = 0, mouseY = 0;
+let ringX  = 0, ringY  = 0;
 
-// ── Navbar scroll (passive for performance) ───────────────
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%,-50%)`;
+}, { passive: true });
+
+(function animateRing() {
+  ringX += (mouseX - ringX) * 0.1;
+  ringY += (mouseY - ringY) * 0.1;
+  ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
+  requestAnimationFrame(animateRing);
+})();
+
+// ══════════════════════════════════════════════════
+//  NAVBAR SCROLL
+// ══════════════════════════════════════════════════
 const navbar = document.getElementById('navbar');
 let ticking = false;
 window.addEventListener('scroll', () => {
   if (!ticking) {
     requestAnimationFrame(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
       ticking = false;
     });
     ticking = true;
   }
 }, { passive: true });
 
-// ── Mobile hamburger ──────────────────────────────────────
+// ══════════════════════════════════════════════════
+//  HAMBURGER
+// ══════════════════════════════════════════════════
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   const spans = hamburger.querySelectorAll('span');
   const open  = navLinks.classList.contains('open');
-  spans[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+  spans[0].style.transform = open ? 'translateY(6.5px) rotate(45deg)' : '';
   spans[1].style.opacity   = open ? '0' : '1';
-  spans[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  spans[2].style.transform = open ? 'translateY(-6.5px) rotate(-45deg)' : '';
 });
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.transform = ''; s.style.opacity = '';
-    });
-  });
-});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+}));
 
-// ── Typed animation ──────────────────────────────────────
-const roles   = [
-  'Digital Marketing Executive',
-  'Graphic Designer',
-  'SEO Specialist',
-  'Social Media Strategist',
-  'Brand Identity Designer',
-  'Content Marketing Expert'
-];
-const typedEl = document.getElementById('typed-role');
-if (typedEl) {
-  let ri = 0, ci = 0, deleting = false;
-  function typeStep() {
-    const word = roles[ri];
-    if (!deleting) {
-      typedEl.textContent = word.slice(0, ++ci);
-      if (ci === word.length) {
-        deleting = true;
-        setTimeout(typeStep, 2200);
-        return;
-      }
-      setTimeout(typeStep, 70);
-    } else {
-      typedEl.textContent = word.slice(0, --ci);
-      if (ci === 0) {
-        deleting = false;
-        ri = (ri + 1) % roles.length;
-        setTimeout(typeStep, 400);
-        return;
-      }
-      setTimeout(typeStep, 38);
-    }
-  }
-  setTimeout(typeStep, 1200);
+// ══════════════════════════════════════════════════
+//  TEXT SCRAMBLE
+// ══════════════════════════════════════════════════
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*';
+function scramble(el, finalText, delay) {
+  setTimeout(() => {
+    let iter = 0;
+    const total = finalText.length * 2.5;
+    const iv = setInterval(() => {
+      el.textContent = finalText.split('').map((c, i) => {
+        if (c === ' ') return ' ';
+        if (c === '.') return i < Math.floor(iter / 2.5) ? '.' : CHARS[Math.floor(Math.random()*CHARS.length)];
+        if (i < Math.floor(iter / 2.5)) return c;
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      if (iter >= total) { el.textContent = finalText; clearInterval(iv); }
+      iter++;
+    }, 32);
+  }, delay);
 }
 
-// ── Scroll reveal (IntersectionObserver) ─────────────────
-const io = new IntersectionObserver(
-  entries => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  }),
-  { threshold: 0.12 }
-);
-document.querySelectorAll('.fade-up,.fade-left,.fade-right,.scale-in').forEach(el => io.observe(el));
-
-// ── Animated progress bars + counters ────────────────────
-const progressFills = document.querySelectorAll('.progress-fill');
-const counters      = document.querySelectorAll('.num[data-count]');
-
-const resultIO = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-
-    // Animate progress bars in this card
-    e.target.querySelectorAll('.progress-fill').forEach(bar => {
-      bar.style.width = bar.dataset.width + '%';
-    });
-
-    // Animate counters in this card
-    e.target.querySelectorAll('.num[data-count]').forEach(el => {
-      const target = +el.dataset.count;
-      const duration = 1600;
-      const start    = performance.now();
-      function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(ease * target);
-        if (progress < 1) requestAnimationFrame(tick);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(tick);
-    });
-
-    resultIO.unobserve(e.target);
-  });
-}, { threshold: 0.35 });
-
-document.querySelectorAll('.result-card').forEach(card => resultIO.observe(card));
-
-// ── Gallery filter ────────────────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    galleryItems.forEach(item => {
-      const show = filter === 'all' || item.dataset.cat === filter;
-      item.style.opacity    = show ? '1' : '0';
-      item.style.transform  = show ? 'scale(1)' : 'scale(0.85)';
-      item.style.pointerEvents = show ? '' : 'none';
-      item.style.transition = 'opacity .35s, transform .35s';
-    });
+// Trigger hero lines in + scramble
+window.addEventListener('load', () => {
+  const lines = document.querySelectorAll('.hero-line-inner');
+  lines.forEach((el, i) => {
+    setTimeout(() => el.classList.add('in'), 200 + i * 180);
+    const text = el.dataset.scramble;
+    if (text) scramble(el, text, 600 + i * 180);
   });
 });
 
-// ── Gallery lightbox ──────────────────────────────────────
-const galleryData = [
-  { label: 'Instagram Campaign — Fashion', bg: 'gal-1', icon: 'ph:instagram-logo-bold' },
-  { label: 'Logo & Brand Identity',        bg: 'gal-2', icon: 'ph:crown-bold' },
-  { label: 'Google Display Ad Set',        bg: 'gal-3', icon: 'ph:megaphone-bold' },
-  { label: 'Social Media Dashboard Post',  bg: 'gal-4', icon: 'ph:chart-line-up-bold' },
-  { label: 'Brochure Design',              bg: 'gal-5', icon: 'ph:newspaper-bold' },
-  { label: 'Brand Color System',           bg: 'gal-6', icon: 'ph:palette-bold' },
-  { label: 'Mobile Ad Creatives',          bg: 'gal-7', icon: 'ph:device-mobile-bold' },
-  { label: 'Reels Thumbnail Series',       bg: 'gal-8', icon: 'ph:video-bold' },
-  { label: 'Event Poster Design',          bg: 'gal-9', icon: 'ph:ticket-bold' },
-];
-const lightbox      = document.getElementById('lightbox');
-const lightboxInner = document.getElementById('lightbox-inner');
+// ══════════════════════════════════════════════════
+//  SCROLL REVEAL
+// ══════════════════════════════════════════════════
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('revealed');
+    revealIO.unobserve(e.target);
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 
-window.openLightbox = function(idx) {
-  const d = galleryData[idx];
-  lightboxInner.innerHTML = `
-    <div class="gallery-placeholder ${d.bg}" style="height:420px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
-      <iconify-icon icon="${d.icon}" style="font-size:4rem;color:rgba(255,255,255,.8)"></iconify-icon>
-      <div style="color:rgba(255,255,255,.9);font-weight:700;font-size:1.1rem">${d.label}</div>
-    </div>`;
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-};
-window.closeLightbox = function() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-};
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    fadeIO.unobserve(e.target);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => fadeIO.observe(el));
 
-// ── Project Modals ────────────────────────────────────────
+// ══════════════════════════════════════════════════
+//  ANIMATED COUNTERS
+// ══════════════════════════════════════════════════
+function animateCounter(el) {
+  const target   = +el.dataset.count;
+  const duration = 1800;
+  const start    = performance.now();
+  const tick = now => {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(ease * target);
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(tick);
+}
+
+const counterIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    animateCounter(e.target);
+    counterIO.unobserve(e.target);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+// ══════════════════════════════════════════════════
+//  MARQUEE PAUSE ON HOVER
+// ══════════════════════════════════════════════════
+document.querySelectorAll('.marquee-wrap').forEach(wrap => {
+  const track = wrap.querySelector('.marquee-track');
+  wrap.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+  wrap.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+});
+
+// ══════════════════════════════════════════════════
+//  WORK ITEM HOVER — scramble title on enter
+// ══════════════════════════════════════════════════
+document.querySelectorAll('.work-item').forEach(item => {
+  const h3 = item.querySelector('h3');
+  const originalText = h3.firstChild.textContent.trim();
+  item.addEventListener('mouseenter', () => {
+    let iter = 0;
+    const total = 8;
+    if (item._iv) clearInterval(item._iv);
+    item._iv = setInterval(() => {
+      if (iter >= total) { h3.firstChild.textContent = originalText; clearInterval(item._iv); return; }
+      h3.firstChild.textContent = originalText.split('').map((c,i) => {
+        if (c === ' ' || c === '-' || c === '&') return c;
+        if (i < (iter / total) * originalText.length) return c;
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      iter++;
+    }, 40);
+  });
+  item.addEventListener('mouseleave', () => {
+    if (item._iv) clearInterval(item._iv);
+    h3.firstChild.textContent = originalText;
+  });
+});
+
+// ══════════════════════════════════════════════════
+//  PROJECT MODALS
+// ══════════════════════════════════════════════════
 window.openModal = function(id) {
   document.getElementById('modal-' + id).classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -196,33 +188,49 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// ── Contact form ──────────────────────────────────────────
-const contactForm = document.getElementById('contact-form');
-const submitBtnText = document.getElementById('submit-btn-text');
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    submitBtnText.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(() => {
-      submitBtnText.textContent = 'Message Sent ✓';
-      contactForm.reset();
-      setTimeout(() => {
-        submitBtnText.textContent = 'Send Message';
-        btn.disabled = false;
-      }, 3500);
-    }, 1400);
+// ══════════════════════════════════════════════════
+//  MAGNETIC BUTTONS
+// ══════════════════════════════════════════════════
+document.querySelectorAll('.contact-cta-btn, .nav-cta').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r  = btn.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top  + r.height / 2;
+    const dx = (e.clientX - cx) * 0.28;
+    const dy = (e.clientY - cy) * 0.28;
+    btn.style.transform = `translate(${dx}px, ${dy}px)`;
   });
-}
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+    btn.style.transition = 'transform .5s cubic-bezier(0.34,1.56,0.64,1)';
+    setTimeout(() => { btn.style.transition = ''; }, 500);
+  });
+});
 
-// ── Smooth scroll for nav links ───────────────────────────
+// ══════════════════════════════════════════════════
+//  SMOOTH SCROLL
+// ══════════════════════════════════════════════════
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
+});
+
+// ══════════════════════════════════════════════════
+//  SECTION LABELS — stagger reveal
+// ══════════════════════════════════════════════════
+const labelIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.style.opacity = '1';
+    e.target.style.transform = 'translateX(0)';
+    labelIO.unobserve(e.target);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.section-label').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateX(-20px)';
+  el.style.transition = 'opacity .6s, transform .6s';
+  labelIO.observe(el);
 });

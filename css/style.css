@@ -520,6 +520,53 @@ body:has(.work-item:hover) #cursor-ring{width:80px;height:80px;border-color:var(
 }
 .contact-cta-btn:hover{background:var(--white);transform:scale(1.03);gap:1.2rem}
 
+/* ═══════════ RÉSUMÉ BUTTONS ═══════════ */
+.nav-resume-btn{
+  font-family:var(--font-mono);font-size:.65rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);padding:.45rem .9rem;
+  border:1px solid var(--border);
+  transition:border-color .2s,color .2s;
+}
+.nav-resume-btn:hover{border-color:var(--yellow);color:var(--yellow)}
+.hero-resume-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.7rem 1.5rem;
+  border:1px solid var(--muted);color:var(--muted);
+  font-family:var(--font-mono);font-size:.68rem;
+  letter-spacing:.15em;text-transform:uppercase;
+  transition:border-color .2s,color .2s;
+}
+.hero-resume-btn:hover{border-color:var(--white);color:var(--white)}
+.contact-resume-btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:1.1rem 2rem;
+  border:2px solid var(--white);color:var(--white);
+  font-family:var(--font-display);
+  font-size:1.1rem;letter-spacing:.12em;
+  transition:background .25s,color .25s,transform .25s var(--ease-spring);
+}
+.contact-resume-btn:hover{background:var(--white);color:var(--black);transform:scale(1.03)}
+
+/* ═══════════ CONTACT DETAILS ═══════════ */
+.contact-details{
+  display:flex;gap:3rem;
+  margin-top:3.5rem;padding-top:3rem;
+  border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.cd-item{}
+.cd-label{
+  font-family:var(--font-mono);
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.5rem;
+}
+.cd-val{
+  font-size:.92rem;font-weight:500;color:var(--white);
+  transition:color .2s;display:block;
+}
+a.cd-val:hover{color:var(--yellow)}
+
 /* ═══════════ FOOTER ═══════════ */
 footer{
   display:flex;align-items:center;justify-content:space-between;

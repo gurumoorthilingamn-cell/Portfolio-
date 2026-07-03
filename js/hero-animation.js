@@ -12,23 +12,23 @@
 
   // Pre-built RGBA strings — avoid string concat inside the loop
   const COLORS = [
-    'rgba(139,94,60,',    // amber (#8B5E3C) — 3× weight
-    'rgba(139,94,60,',
-    'rgba(139,94,60,',
-    'rgba(180,140,100,',  // light amber/tan
-    'rgba(180,140,100,',
-    'rgba(122,107,90,',   // warm muted
-    'rgba(100,75,50,',    // deep cognac
+    'rgba(203,255,77,',   // neon lime — 3× weight
+    'rgba(203,255,77,',
+    'rgba(203,255,77,',
+    'rgba(168,255,53,',   // bright lime
+    'rgba(168,255,53,',
+    'rgba(255,59,107,',   // hot pink pop
+    'rgba(120,210,30,',   // deep green
   ];
   // Pre-built fill strings (no alpha variation)
   const FILL = [
-    'rgb(139,94,60)',
-    'rgb(139,94,60)',
-    'rgb(139,94,60)',
-    'rgb(180,140,100)',
-    'rgb(180,140,100)',
-    'rgb(122,107,90)',
-    'rgb(100,75,50)',
+    'rgb(203,255,77)',
+    'rgb(203,255,77)',
+    'rgb(203,255,77)',
+    'rgb(168,255,53)',
+    'rgb(168,255,53)',
+    'rgb(255,59,107)',
+    'rgb(120,210,30)',
   ];
 
   let W, H, particles, lastFrame = 0;
@@ -112,22 +112,22 @@
     const ro = 28 + Math.sin(t) * 5;
     const ri = 3.5 + Math.sin(t * 1.3) * 1;
 
-    ctx.globalAlpha = 0.28;
-    ctx.strokeStyle = '#8B5E3C';
+    ctx.globalAlpha = 0.25;
+    ctx.strokeStyle = '#CBFF4D';
     ctx.lineWidth   = 1.5;
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, ro, 0, Math.PI * 2);
     ctx.stroke();
 
     const ro2 = 16 + Math.sin(t * 0.7 + 1) * 3;
-    ctx.globalAlpha = 0.18;
-    ctx.strokeStyle = '#B48C64';
+    ctx.globalAlpha = 0.15;
+    ctx.strokeStyle = '#A8FF35';
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, ro2, 0, Math.PI * 2);
     ctx.stroke();
 
     ctx.globalAlpha = 0.75;
-    ctx.fillStyle   = '#B48C64';
+    ctx.fillStyle   = '#CBFF4D';
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, ri, 0, Math.PI * 2);
     ctx.fill();

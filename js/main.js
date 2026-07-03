@@ -236,6 +236,25 @@ document.querySelectorAll('.section-label').forEach(el => {
 });
 
 // ══════════════════════════════════════════════════
+//  GALLERY — staggered fade in via IntersectionObserver
+// ══════════════════════════════════════════════════
+const galleryIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.style.opacity = '1';
+    e.target.style.transform = 'translateY(0)';
+    galleryIO.unobserve(e.target);
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.gallery-masonry-item').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(28px)';
+  el.style.transition = `opacity .55s ease ${i * 0.04}s, transform .55s ease ${i * 0.04}s`;
+  galleryIO.observe(el);
+});
+
+// ══════════════════════════════════════════════════
 //  LIGHTBOX
 // ══════════════════════════════════════════════════
 const lightbox    = document.getElementById('lightbox');

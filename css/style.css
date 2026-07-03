@@ -778,46 +778,69 @@ footer{
 
 /* ── Design Gallery Section ─────────────────── */
 .gallery-section{
-  padding:7rem 2.5rem;
+  padding:7rem 2.5rem 9rem;
   border-bottom:1px solid var(--border);
-  display:flex;flex-direction:column;gap:3.5rem;
+  background:var(--black);
 }
-.gallery-brand{}
-.gallery-brand-header{
-  display:flex;align-items:baseline;gap:1.5rem;
-  padding-bottom:1rem;
+.gallery-intro{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding-bottom:2rem;margin-bottom:2.5rem;
   border-bottom:1px solid var(--border);
-  margin-bottom:1.2rem;
-  flex-wrap:wrap;
+  gap:1rem;flex-wrap:wrap;
 }
-.gbh-name{
-  font-family:var(--font-display);font-size:1.5rem;
-  letter-spacing:.06em;color:var(--white);
+.gallery-headline{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:.95;letter-spacing:.04em;
 }
-.gbh-tag{
-  font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:.14em;color:var(--yellow);
-  border:1px solid var(--border);padding:.25rem .7rem;
+.gallery-headline .acc{color:var(--yellow)}
+.gallery-count{
+  font-family:var(--font-mono);font-size:.62rem;
+  letter-spacing:.18em;color:var(--muted);
 }
-.gallery-track{
-  display:flex;gap:1rem;
-  overflow-x:auto;
-  padding-bottom:.75rem;
-  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+
+/* Masonry grid */
+.gallery-masonry{
+  columns:3;column-gap:1rem;
 }
-.gallery-track::-webkit-scrollbar{height:3px}
-.gallery-track::-webkit-scrollbar-track{background:transparent}
-.gallery-track::-webkit-scrollbar-thumb{background:var(--border)}
-.gallery-track img{
-  height:260px;width:auto;
-  flex-shrink:0;display:block;
+.gallery-masonry-item{
+  break-inside:avoid;margin-bottom:1rem;
+  position:relative;overflow:hidden;
   border:1px solid var(--border);
-  transition:border-color .25s,transform .35s var(--ease);
-  cursor:pointer;
+  cursor:pointer;display:block;
+  background:var(--gray-1);
 }
-.gallery-track img:hover{
-  border-color:var(--yellow);
-  transform:translateY(-6px);
+.gallery-masonry-item img{
+  width:100%;height:auto;display:block;
+  transition:transform .65s var(--ease);
+}
+.gallery-masonry-item:hover img{transform:scale(1.06)}
+.gallery-item-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,8,8,.92) 30%,transparent 70%);
+  opacity:0;
+  transition:opacity .3s;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;padding:1.2rem;
+}
+.gallery-masonry-item:hover .gallery-item-overlay{opacity:1}
+.gio-arrow{
+  position:absolute;top:1rem;right:1rem;
+  width:34px;height:34px;
+  border:1px solid rgba(242,237,230,.3);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;color:var(--white);
+  opacity:0;transform:scale(.6) rotate(-45deg);
+  transition:opacity .3s .05s,transform .4s var(--ease-spring);
+}
+.gallery-masonry-item:hover .gio-arrow{opacity:1;transform:scale(1) rotate(0deg)}
+.gio-brand{
+  font-family:var(--font-mono);font-size:.57rem;
+  letter-spacing:.18em;color:var(--yellow);margin-bottom:.3rem;
+}
+.gio-title{
+  font-family:var(--font-display);font-size:1.05rem;
+  color:var(--white);line-height:1.1;
 }
 
 /* ── Modal Gallery ─────────────────── */
@@ -873,6 +896,7 @@ footer{
   .testimonials-grid{grid-template-columns:1fr 1fr}
   .work-item{grid-template-columns:3rem 1fr auto 1.5rem;gap:1rem}
   .hero-headline{grid-template-columns:1fr 260px;gap:2rem}
+  .gallery-masonry{columns:2}
 }
 @media(max-width:768px){
   .navbar{padding:1rem 1.2rem}
@@ -889,9 +913,11 @@ footer{
   .hero-topbar{flex-wrap:wrap;gap:.5rem;font-size:.58rem}
   .hero-headline{grid-template-columns:1fr;gap:1.5rem}
   .hero-right{flex-direction:row;flex-wrap:wrap}
-  .hero-card-main{height:140px;flex:1 1 100%}
+  .hero-card-main{flex:1 1 100%}
   .hero-mini-stats{flex:1 1 auto}
   .hero-rotating-wrap{display:none}
+  .gallery-masonry{columns:1}
+  .gallery-section{padding:5rem 1.2rem 6rem}
   .about-section,.work-section,.numbers-section,.services-section,.skills-section,.testimonials-section,.contact-section{padding:5rem 1.2rem}
   .about-stats{grid-template-columns:1fr 1fr}
   .numbers-grid{grid-template-columns:1fr 1fr}

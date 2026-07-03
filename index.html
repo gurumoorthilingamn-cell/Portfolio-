@@ -298,208 +298,341 @@
 <section class="gallery-section" id="gallery">
   <div class="section-label" data-num="04">CREATIVE WORK</div>
 
-  <div class="gallery-intro">
-    <div class="gallery-headline fade-up">DESIGN &amp;<br><span class="acc">CREATIVE</span> WORK</div>
-    <div class="gallery-count fade-up">20+ PIECES · 8+ BRANDS</div>
+  <div class="gallery-header">
+    <div class="gallery-title-row">
+      <h2 class="gallery-big-title fade-up">SELECTED<br>WORK<span class="acc">.</span></h2>
+      <div class="gallery-stats fade-up">
+        <div class="gs-item">
+          <div class="gs-num">22+</div>
+          <div class="gs-lbl">Creatives</div>
+        </div>
+        <div class="gs-item">
+          <div class="gs-num">8+</div>
+          <div class="gs-lbl">Brands</div>
+        </div>
+        <div class="gs-item">
+          <div class="gs-num">2</div>
+          <div class="gs-lbl">Tools</div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-filters fade-up">
+      <button class="gf-btn active" data-filter="all">ALL WORK</button>
+      <button class="gf-btn" data-filter="kisaancart">KISAANCART</button>
+      <button class="gf-btn" data-filter="eves">EVES</button>
+      <button class="gf-btn" data-filter="ayini">AYINI</button>
+      <button class="gf-btn" data-filter="wellness">WELLNESS</button>
+      <button class="gf-btn" data-filter="events">EVENTS &amp; MORE</button>
+    </div>
   </div>
 
-  <div class="gallery-masonry">
+  <div class="gallery-masonry" id="galleryGrid">
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 101.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · META ADS</span>
-        <span class="gio-title">Fertilizer Product Ad</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">01</span>
+        <img src="images/Frame 101.png" alt="KisaanCart fertilizer ad">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · META ADS</div>
+          <div class="gic-title">Fertilizer Product Ad</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Dandiya Queen Night.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVENTS · PRINT DESIGN</span>
-        <span class="gio-title">Dandiya Queen Night 2025</span>
+    <div class="gallery-masonry-item" data-brand="eves" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">02</span>
+        <img src="images/Eves Broucher Front.png" alt="EVES brochure">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVES CONSULTING · PRINT DESIGN</div>
+          <div class="gic-title">Brochure — Front</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Instagram post - 5.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">SHREEM WELLNESS · SOCIAL MEDIA</span>
-        <span class="gio-title">Pain Relief Oil Campaign</span>
+    <div class="gallery-masonry-item" data-brand="events" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">03</span>
+        <img src="images/Dandiya Queen Night.jpg" alt="Dandiya Queen Night">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVENTS · PRINT DESIGN</div>
+          <div class="gic-title">Dandiya Queen Night 2025</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 811.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVES CONSULTING · BRANDING</span>
-        <span class="gio-title">Logo Design</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">04</span>
+        <img src="images/Frame 156.png" alt="KisaanCart testimonial">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · SOCIAL PROOF</div>
+          <div class="gic-title">Seller Testimonial</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 113.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · PRODUCT AD</span>
-        <span class="gio-title">Farm Lure Product</span>
+    <div class="gallery-masonry-item" data-brand="eves" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">05</span>
+        <img src="images/Frame 811.png" alt="EVES logo">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVES CONSULTING · BRANDING</div>
+          <div class="gic-title">Logo Design</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Eves Broucher Front.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVES CONSULTING · PRINT</span>
-        <span class="gio-title">Brochure Design — Front</span>
+    <div class="gallery-masonry-item" data-brand="wellness" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">06</span>
+        <img src="images/Instagram post - 5.jpg" alt="Shreem Wellness">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">SHREEM WELLNESS · SOCIAL MEDIA</div>
+          <div class="gic-title">Pain Relief Oil Campaign</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 128.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">AYINI FLAVOURS · SOCIAL MEDIA</span>
-        <span class="gio-title">Order Promotion</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">07</span>
+        <img src="images/Frame 113.png" alt="KisaanCart farm lure">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · PRODUCT AD</div>
+          <div class="gic-title">Farm Lure Product</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 156.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · SOCIAL PROOF</span>
-        <span class="gio-title">Seller Testimonial</span>
+    <div class="gallery-masonry-item" data-brand="ayini" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">08</span>
+        <img src="images/Frame 128.png" alt="Ayini order">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">AYINI FLAVOURS · SOCIAL MEDIA</div>
+          <div class="gic-title">Order From Us Today</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/banner 3.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVES CONSULTING · PRINT</span>
-        <span class="gio-title">Services Banner</span>
+    <div class="gallery-masonry-item" data-brand="eves" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">09</span>
+        <img src="images/banner 3.jpg" alt="EVES services banner">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVES CONSULTING · PRINT</div>
+          <div class="gic-title">Services Banner</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 132.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">AYINI FLAVOURS · EVENTS</span>
-        <span class="gio-title">Event Marketing</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">10</span>
+        <img src="images/Frame 65.png" alt="KisaanCart grains">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · SOCIAL MEDIA</div>
+          <div class="gic-title">Heritage Grains Campaign</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 65.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · SOCIAL MEDIA</span>
-        <span class="gio-title">Heritage Grains Campaign</span>
+    <div class="gallery-masonry-item" data-brand="ayini" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">11</span>
+        <img src="images/Frame 132.png" alt="Ayini event">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">AYINI FLAVOURS · EVENTS</div>
+          <div class="gic-title">Event Marketing</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Instagram post - 17.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">NEBULA CAFF · BRANDING</span>
-        <span class="gio-title">Logo Design</span>
+    <div class="gallery-masonry-item" data-brand="wellness" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">12</span>
+        <img src="images/Instagram post - 6.jpg" alt="Shreem Tamil">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">SHREEM WELLNESS · BILINGUAL</div>
+          <div class="gic-title">Tamil Language Campaign</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Instagram post - 2.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">GLEAM OF HEARTS · PHOTOGRAPHY</span>
-        <span class="gio-title">Social Media Creative</span>
+    <div class="gallery-masonry-item" data-brand="events" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">13</span>
+        <img src="images/Instagram post - 17.jpg" alt="Nebula Caff logo">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">NEBULA CAFF · LOGO DESIGN</div>
+          <div class="gic-title">Brand Identity</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 56.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · EDUCATION</span>
-        <span class="gio-title">Cardamom Myth vs Fact</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">14</span>
+        <img src="images/Frame 56.png" alt="KisaanCart cardamom">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · EDUCATION</div>
+          <div class="gic-title">Cardamom Myth vs Fact</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/1.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · PRODUCT</span>
-        <span class="gio-title">Honey Product Feature</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">15</span>
+        <img src="images/1.png" alt="KisaanCart honey">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · PRODUCT</div>
+          <div class="gic-title">Honey Product Feature</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 133.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">AYINI FLAVOURS · SOCIAL MEDIA</span>
-        <span class="gio-title">Book Now Campaign</span>
+    <div class="gallery-masonry-item" data-brand="ayini" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">16</span>
+        <img src="images/Frame 133.png" alt="Ayini book now">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">AYINI FLAVOURS · SOCIAL MEDIA</div>
+          <div class="gic-title">Book Now Campaign</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Instagram post - 6.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">SHREEM WELLNESS · BILINGUAL</span>
-        <span class="gio-title">Tamil Language Campaign</span>
+    <div class="gallery-masonry-item" data-brand="eves" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">17</span>
+        <img src="images/Eves Broucher Back.png" alt="EVES brochure back">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVES CONSULTING · PRINT</div>
+          <div class="gic-title">Brochure — Back</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Eves Broucher Back.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVES CONSULTING · PRINT</span>
-        <span class="gio-title">Brochure Design — Back</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">18</span>
+        <img src="images/2.png" alt="KisaanCart eco thrive">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · PRODUCT</div>
+          <div class="gic-title">Eco Thrive Growing Media</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/2.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · PRODUCT</span>
-        <span class="gio-title">Eco Thrive Growing Media</span>
+    <div class="gallery-masonry-item" data-brand="wellness" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">19</span>
+        <img src="images/Instagram post - 7.jpg" alt="Shreem healing">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">SHREEM WELLNESS · AYURVEDA</div>
+          <div class="gic-title">Traditional Healing Infographic</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Mohi.jpg" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">MOHITH GROUPS · BRANDING</span>
-        <span class="gio-title">Business Card Design</span>
+    <div class="gallery-masonry-item" data-brand="events" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">20</span>
+        <img src="images/Mohi.jpg" alt="Mohith Groups card">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">MOHITH GROUPS · BRANDING</div>
+          <div class="gic-title">Business Card Design</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/Frame 53.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">KISAANCART · BRAND</span>
-        <span class="gio-title">Empowering Farmers</span>
+    <div class="gallery-masonry-item" data-brand="kisaancart" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">21</span>
+        <img src="images/Frame 53.png" alt="KisaanCart farmers">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">KISAANCART · BRAND</div>
+          <div class="gic-title">Empowering Farmers</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 
-    <div class="gallery-masonry-item" onclick="openLightbox(this.querySelector('img'))">
-      <img src="images/ggh.png" alt="">
-      <div class="gallery-item-overlay">
-        <div class="gio-arrow">↗</div>
-        <span class="gio-brand">EVES CONSULTING · PRINT</span>
-        <span class="gio-title">Business Card Design</span>
+    <div class="gallery-masonry-item" data-brand="eves" onclick="openLightbox(this.querySelector('img'))">
+      <div class="gallery-item-img-wrap">
+        <span class="gallery-item-idx">22</span>
+        <img src="images/ggh.png" alt="EVES business card">
+      </div>
+      <div class="gallery-item-caption">
+        <div class="gic-meta">
+          <div class="gic-brand">EVES CONSULTING · PRINT</div>
+          <div class="gic-title">Business Card Design</div>
+        </div>
+        <span class="gic-arrow">↗</span>
       </div>
     </div>
 

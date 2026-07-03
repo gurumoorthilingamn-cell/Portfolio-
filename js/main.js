@@ -236,6 +236,21 @@ document.querySelectorAll('.section-label').forEach(el => {
 });
 
 // ══════════════════════════════════════════════════
+//  GALLERY FILTERS
+// ══════════════════════════════════════════════════
+document.querySelectorAll('.gf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.gallery-masonry-item').forEach(item => {
+      const show = filter === 'all' || item.dataset.brand === filter;
+      item.style.display = show ? 'block' : 'none';
+    });
+  });
+});
+
+// ══════════════════════════════════════════════════
 //  GALLERY — staggered fade in via IntersectionObserver
 // ══════════════════════════════════════════════════
 const galleryIO = new IntersectionObserver(entries => {

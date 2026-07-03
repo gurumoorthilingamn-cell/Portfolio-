@@ -1,13 +1,13 @@
 :root {
-  --black:   #0D0D0D;
-  --white:   #F5F5F0;
-  --yellow:  #CBFF4D;
-  --red:     #FF3B6B;
-  --gray-1:  #161616;
-  --gray-2:  #1C1C1C;
-  --gray-3:  #242424;
-  --muted:   #888888;
-  --border:  #2A2A2A;
+  --black:      #111111;
+  --cream:      #F5F0E8;
+  --cream-2:    #EDE8DC;
+  --pink:       #FF2D78;
+  --pink-dark:  #C80055;
+  --white:      #FFFFFF;
+  --border:     #D5CCBA;
+  --muted:      #9A8F80;
+  --text:       #1A1010;
 
   --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
   --font-body:    'Space Grotesk', 'Inter', sans-serif;

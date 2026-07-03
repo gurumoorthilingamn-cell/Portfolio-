@@ -760,6 +760,109 @@ footer{
 }
 .modal-cta:hover{background:var(--white)}
 
+/* ── Hero card with real image ─────────────── */
+.hero-card-main{
+  position:relative;border:1px solid var(--border);
+  overflow:hidden;background:var(--gray-1);
+}
+.hero-card-img{
+  width:100%;height:auto;display:block;
+  transition:transform .5s var(--ease);
+}
+.hero-card-main:hover .hero-card-img{transform:scale(1.03)}
+.hero-card-main .hero-card-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:.8rem 1rem;
+  background:linear-gradient(to top,rgba(8,8,8,.95) 70%,transparent);
+}
+
+/* ── Design Gallery Section ─────────────────── */
+.gallery-section{
+  padding:7rem 2.5rem;
+  border-bottom:1px solid var(--border);
+  display:flex;flex-direction:column;gap:3.5rem;
+}
+.gallery-brand{}
+.gallery-brand-header{
+  display:flex;align-items:baseline;gap:1.5rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+  margin-bottom:1.2rem;
+  flex-wrap:wrap;
+}
+.gbh-name{
+  font-family:var(--font-display);font-size:1.5rem;
+  letter-spacing:.06em;color:var(--white);
+}
+.gbh-tag{
+  font-family:var(--font-mono);font-size:.6rem;
+  letter-spacing:.14em;color:var(--yellow);
+  border:1px solid var(--border);padding:.25rem .7rem;
+}
+.gallery-track{
+  display:flex;gap:1rem;
+  overflow-x:auto;
+  padding-bottom:.75rem;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+.gallery-track::-webkit-scrollbar{height:3px}
+.gallery-track::-webkit-scrollbar-track{background:transparent}
+.gallery-track::-webkit-scrollbar-thumb{background:var(--border)}
+.gallery-track img{
+  height:260px;width:auto;
+  flex-shrink:0;display:block;
+  border:1px solid var(--border);
+  transition:border-color .25s,transform .35s var(--ease);
+  cursor:pointer;
+}
+.gallery-track img:hover{
+  border-color:var(--yellow);
+  transform:translateY(-6px);
+}
+
+/* ── Modal Gallery ─────────────────── */
+.modal-gallery{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin-top:1.5rem;padding-top:1.5rem;
+  border-top:1px solid var(--border);
+}
+.modal-gallery-label{
+  width:100%;
+  font-family:var(--font-mono);font-size:.6rem;
+  letter-spacing:.18em;color:var(--yellow);
+  margin-bottom:.25rem;
+}
+.modal-gallery img{
+  height:150px;width:auto;
+  display:block;
+  border:1px solid var(--border);
+  transition:border-color .2s,transform .2s;
+  cursor:pointer;
+}
+.modal-gallery img:hover{border-color:var(--yellow);transform:scale(1.02)}
+
+/* ── Lightbox ─────────────────── */
+.lightbox{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.95);
+  display:none;align-items:center;justify-content:center;
+  cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:90vw;max-height:90vh;
+  width:auto;height:auto;
+  display:block;
+  border:1px solid var(--border);
+}
+.lightbox-close{
+  position:fixed;top:1.5rem;right:1.5rem;
+  font-family:var(--font-mono);font-size:1rem;
+  color:var(--white);background:none;border:none;cursor:pointer;
+  opacity:.6;transition:opacity .2s;
+}
+.lightbox-close:hover{opacity:1}
+
 /* ═══════════ RESPONSIVE ═══════════ */
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr;gap:3rem}

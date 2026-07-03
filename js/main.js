@@ -234,3 +234,24 @@ document.querySelectorAll('.section-label').forEach(el => {
   el.style.transition = 'opacity .6s, transform .6s';
   labelIO.observe(el);
 });
+
+// ══════════════════════════════════════════════════
+//  LIGHTBOX
+// ══════════════════════════════════════════════════
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+window.openLightbox = function(imgEl) {
+  lightboxImg.src = imgEl.src;
+  lightboxImg.alt = imgEl.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+window.closeLightbox = function() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  lightboxImg.src = '';
+};
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+});

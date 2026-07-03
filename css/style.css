@@ -937,6 +937,13 @@ footer{
 .lightbox-close:hover{opacity:1}
 
 /* ═══════════ RESPONSIVE ═══════════ */
+
+/* Hide custom cursor on touch devices */
+@media(hover:none),(pointer:coarse){
+  #cursor-dot,#cursor-ring{display:none}
+  body,a,button{cursor:auto}
+}
+
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .numbers-grid{grid-template-columns:repeat(2,1fr)}
@@ -951,6 +958,7 @@ footer{
   .gallery-big-title{font-size:clamp(3rem,7vw,6rem)}
   .gallery-stats{gap:1.5rem}
 }
+
 @media(max-width:768px){
   .navbar{padding:1rem 1.2rem}
   .nav-center{display:none}
@@ -960,27 +968,81 @@ footer{
     background:var(--black);padding:2rem 1.2rem;z-index:99;
     gap:1.5rem;
   }
-  .nav-center.open a{font-size:1.2rem}
+  .nav-center.open a{font-size:1.2rem;letter-spacing:.08em}
   .hamburger{display:flex}
+  .nav-cta{display:none}
+
   .hero{padding:0 1.2rem}
-  .hero-topbar{flex-wrap:wrap;gap:.5rem;font-size:.58rem}
+  .hero-topbar{flex-wrap:wrap;gap:.5rem;font-size:.58rem;padding-top:5rem}
   .hero-main{grid-template-columns:1fr;gap:2rem}
   .hero-visual{order:-1}
   .hi-italic-word{font-size:clamp(2rem,8vw,3.5rem)}
   .hero-line-inner{font-size:clamp(3rem,12vw,6rem)}
+  .hi-desc{font-size:.85rem;max-width:100%}
+  .hi-ctas{flex-direction:column;gap:.6rem}
+  .hi-cta-primary,.hi-cta-sec{width:100%;justify-content:center;text-align:center}
+  .hero-statsbar{gap:1rem;flex-wrap:wrap}
   .hsb-scroll{display:none}
+
   .gallery-masonry{columns:2}
   .gallery-section{padding:5rem 1.2rem 6rem}
   .gallery-big-title{font-size:clamp(2.5rem,10vw,4rem)}
-  .gallery-stats{gap:1rem}
+  .gallery-title-row{flex-direction:column;align-items:flex-start;gap:1rem}
+  .gallery-stats{gap:1rem;align-self:flex-start}
   .gs-num{font-size:2rem}
+
   .about-section,.work-section,.numbers-section,.services-section,.skills-section,.testimonials-section,.contact-section{padding:5rem 1.2rem}
   .about-stats{grid-template-columns:1fr 1fr}
   .numbers-grid{grid-template-columns:1fr 1fr}
+  .number-item{padding:2rem 1.2rem}
   .skills-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
+
   .work-item{grid-template-columns:2.5rem 1fr;gap:.5rem}
   .work-result,.work-arrow{display:none}
+
   .contact-headline{font-size:clamp(3rem,14vw,8rem)}
+  .contact-row{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .contact-email{font-size:clamp(1.2rem,5vw,2rem)}
+  .contact-details{gap:1.5rem}
+
+  .modal-box{padding:2rem 1.5rem}
+  .modal-box h2{font-size:1.8rem}
+
   footer{flex-direction:column;gap:1.2rem;text-align:center}
+  .foot-socials{justify-content:center}
+
+  .service-name{font-size:clamp(1.4rem,6vw,2.5rem)}
+}
+
+@media(max-width:480px){
+  .hero-topbar{flex-direction:column;align-items:flex-start;gap:.3rem}
+  .htb-loc{display:none}
+  .hero-line-inner{font-size:clamp(2.8rem,15vw,5rem)}
+  .hero-statsbar{gap:.8rem}
+  .hsb-div{display:none}
+
+  .gallery-masonry{columns:1}
+  .gf-btn{font-size:.58rem;padding:.4rem .85rem}
+
+  .about-stats{grid-template-columns:1fr}
+  .about-stat-num{font-size:2.8rem}
+  .numbers-grid{grid-template-columns:1fr 1fr}
+
+  .work-item{padding:1.2rem 0}
+  .work-info h3{font-size:1.1rem}
+  .work-tags{display:none}
+
+  .contact-headline{font-size:clamp(2.5rem,16vw,5rem)}
+  .contact-bg-text{display:none}
+
+  .modal-box{padding:1.5rem 1rem;max-height:92vh}
+  .modal-num{font-size:2.5rem}
+  .modal-box h2{font-size:1.5rem}
+  .modal-gallery img{height:100px}
+
+  .skill-group{padding:1.8rem 1.2rem}
+  .t-card{padding:1.8rem 1.2rem}
+
+  footer{padding:1.5rem 1.2rem}
 }

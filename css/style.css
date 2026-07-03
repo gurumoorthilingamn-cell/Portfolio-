@@ -1084,6 +1084,9 @@ body.loaded{opacity:1}
   .hero-year-pill span{padding:.3rem 1.2rem;font-size:.56rem}
 }
 
+/* ═══════════ ICONIFY ═══════════ */
+iconify-icon{display:inline-block;vertical-align:middle;line-height:1}
+
 /* ═══════════ GPU COMPOSITING HINTS ═══════════ */
 .gallery-masonry-item,
 .work-item,

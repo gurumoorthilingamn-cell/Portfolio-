@@ -55,7 +55,7 @@ body::after{
 #cursor-ring{
   position:fixed;top:0;left:0;
   width:40px;height:40px;
-  border:1.5px solid rgba(124,77,255,.5);
+  border:1.5px solid rgba(28,21,16,.3);
   border-radius:50%;
   pointer-events:none;z-index:9999;
   transform:translate(-50%,-50%);
@@ -83,7 +83,7 @@ body:has(.work-item:hover) #cursor-ring{width:80px;height:80px;border-color:var(
   mix-blend-mode:normal;
 }
 .navbar.scrolled{
-  background:rgba(8,8,8,.92);
+  background:rgba(244,237,225,.96);
   backdrop-filter:blur(12px);
   border-bottom-color:var(--border);
   padding:1rem 2.5rem;
@@ -857,7 +857,7 @@ footer{
   position:absolute;top:.75rem;left:.75rem;
   font-family:var(--font-mono);font-size:.55rem;
   letter-spacing:.1em;color:var(--yellow);
-  background:rgba(8,8,8,.75);
+  background:rgba(28,21,16,.82);
   padding:.2rem .55rem;
   backdrop-filter:blur(6px);
   pointer-events:none;

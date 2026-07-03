@@ -1,22 +1,66 @@
 // ══════════════════════════════════════════════════
-//  CUSTOM CURSOR
+//  CUSTOM CURSOR — colour-shifting morphing cursor
 // ══════════════════════════════════════════════════
-const dot      = document.getElementById('cursor-dot');
-const ring     = document.getElementById('cursor-ring');
+const dot  = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
 let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
+let ringX = 0, ringY = 0;
+let rvx = 0, rvy = 0;       // ring spring velocity
+let cursorTick = 0;
+let cursorMode = 'default'; // default | link | image | drag | text
+let prevMode   = 'default';
+
+// Cycles through the pink palette per frame
+function cursorColor(t) {
+  const s  = Math.sin(t)   * 0.5 + 0.5;
+  const s2 = Math.cos(t * 0.7 + 1.2) * 0.5 + 0.5;
+  const r  = Math.round(195 + 60 * s);
+  const g  = Math.round(s2 * 40);
+  const b  = Math.round(80 + 75 * (1 - s));
+  return { r, g, b, str: `rgb(${r},${g},${b})`, faint: `rgba(${r},${g},${b},.28)` };
+}
+
+function detectMode(el) {
+  if (!el) return 'default';
+  if (el.closest('.gallery-masonry-item'))                       return 'image';
+  if (el.closest('.work-item') || el.closest('.service-row'))    return 'drag';
+  if (el.closest('a') || el.closest('button') ||
+      el.closest('.gf-btn') || el.closest('.contact-cta-btn'))   return 'link';
+  if (el.matches('p,h1,h2,h3,h4,span,li'))                      return 'text';
+  return 'default';
+}
 
 document.addEventListener('mousemove', e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%,-50%)`;
+  dot.style.transform  = `translate(${mouseX}px, ${mouseY}px) translate(-50%,-50%)`;
+  cursorMode = detectMode(e.target);
 }, { passive: true });
 
-(function animateRing() {
-  ringX += (mouseX - ringX) * 0.1;
-  ringY += (mouseY - ringY) * 0.1;
+(function animateCursor() {
+  cursorTick++;
+  const t = cursorTick * 0.018;
+  const c = cursorColor(t);
+
+  // Spring physics (separate x/y velocities for natural wobble)
+  rvx += (mouseX - ringX) * 0.13;
+  rvy += (mouseY - ringY) * 0.13;
+  rvx *= 0.76; rvy *= 0.76;
+  ringX += rvx; ringY += rvy;
   ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
-  requestAnimationFrame(animateRing);
+
+  // Per-frame colour update (no transition fighting — borderWidth excluded from CSS transition)
+  dot.style.background  = c.str;
+  ring.style.borderColor = cursorMode === 'default' ? c.faint : c.str;
+
+  // Mode class swap — CSS transitions handle the smooth size morph
+  if (cursorMode !== prevMode) {
+    ring.className = cursorMode !== 'default' ? `cm-${cursorMode}` : '';
+    dot.className  = cursorMode !== 'default' ? `cm-${cursorMode}` : '';
+    prevMode = cursorMode;
+  }
+
+  requestAnimationFrame(animateCursor);
 })();
 
 // ══════════════════════════════════════════════════
@@ -73,8 +117,9 @@ function scramble(el, finalText, delay) {
   }, delay);
 }
 
-// Trigger hero lines in + scramble
+// Trigger hero lines in + scramble; fade in page
 window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
   const lines = document.querySelectorAll('.hero-line-inner');
   lines.forEach((el, i) => {
     setTimeout(() => el.classList.add('in'), 200 + i * 180);

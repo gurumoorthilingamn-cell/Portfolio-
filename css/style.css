@@ -50,8 +50,8 @@ body::after{
   border-radius:50%;
   pointer-events:none;z-index:10000;
   transform:translate(-50%,-50%);
-  transition:width .15s,height .15s,background .15s;
-  will-change:transform;
+  transition:width .22s var(--ease-spring),height .22s var(--ease-spring);
+  will-change:transform,background;
 }
 #cursor-ring{
   position:fixed;top:0;left:0;
@@ -60,15 +60,19 @@ body::after{
   border-radius:50%;
   pointer-events:none;z-index:9999;
   transform:translate(-50%,-50%);
-  transition:width .3s,height .3s,border-color .3s;
-  will-change:transform;
+  transition:width .38s var(--ease-spring),height .38s var(--ease-spring),
+             border-radius .38s var(--ease-spring),border-width .2s;
+  will-change:transform,border-color;
 }
-body:has(a:hover) #cursor-dot,
-body:has(button:hover) #cursor-dot{width:12px;height:12px;background:var(--pink)}
-body:has(a:hover) #cursor-ring,
-body:has(button:hover) #cursor-ring{width:52px;height:52px;border-color:var(--pink)}
-body:has(.work-item:hover) #cursor-dot{background:var(--pink);width:60px;height:60px;opacity:.07}
-body:has(.work-item:hover) #cursor-ring{width:80px;height:80px;border-color:var(--pink)}
+/* JS-toggled mode classes */
+#cursor-ring.cm-link  { width:52px; height:52px; border-width:2px; }
+#cursor-ring.cm-image { width:70px; height:70px; }
+#cursor-ring.cm-drag  { width:60px; height:60px; border-radius:14px; }
+#cursor-ring.cm-text  { width:4px;  height:28px; border-radius:2px; border-width:2px; }
+#cursor-dot.cm-link   { width:10px; height:10px; }
+#cursor-dot.cm-image  { width:4px;  height:4px; }
+#cursor-dot.cm-text   { width:4px;  height:4px; }
+#cursor-dot.cm-drag   { width:9px;  height:9px; }
 @media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none}}
 
 /* ═══════════ NAVBAR ═══════════ */
@@ -853,17 +857,23 @@ footer{
 
 /* ═══════════ SCROLL ANIMATIONS ═══════════ */
 .fade-up{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .7s var(--ease),transform .7s var(--ease);
+  opacity:0;transform:translateY(32px);
+  transition:opacity .75s cubic-bezier(0.22,1,0.36,1),
+             transform .75s cubic-bezier(0.22,1,0.36,1);
+  will-change:opacity,transform;
 }
-.fade-up[data-delay="2"]{transition-delay:.12s}
-.fade-up[data-delay="3"]{transition-delay:.24s}
-.fade-up[data-delay="4"]{transition-delay:.36s}
-.fade-up[data-delay="5"]{transition-delay:.48s}
-.fade-up[data-delay="6"]{transition-delay:.6s}
+.fade-up[data-delay="2"]{transition-delay:.1s}
+.fade-up[data-delay="3"]{transition-delay:.2s}
+.fade-up[data-delay="4"]{transition-delay:.3s}
+.fade-up[data-delay="5"]{transition-delay:.42s}
+.fade-up[data-delay="6"]{transition-delay:.55s}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-.reveal{opacity:0;transition:opacity .8s var(--ease)}
+.reveal{opacity:0;transition:opacity .9s cubic-bezier(0.22,1,0.36,1)}
 .reveal.revealed{opacity:1}
+
+/* ═══════════ PAGE LOAD ═══════════ */
+body{opacity:0;transition:opacity .55s ease}
+body.loaded{opacity:1}
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media(max-width:1100px){
@@ -910,3 +920,12 @@ footer{
   .gallery-big-title{font-size:clamp(2.5rem,9vw,4.5rem)}
   .hero-year-pill span{letter-spacing:.15em;font-size:.62rem}
 }
+
+/* ═══════════ GPU COMPOSITING HINTS ═══════════ */
+.gallery-masonry-item,
+.work-item,
+.service-row,
+.number-card,
+.skill-card{will-change:transform}
+.hero-line-inner,.hi-cta-primary,.hi-cta-sec{will-change:transform,opacity}
+#hero-canvas{will-change:contents}

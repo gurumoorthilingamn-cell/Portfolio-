@@ -334,3 +334,51 @@ window.closeLightbox = function() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
 });
+
+// ══════════════════════════════════════════════════
+//  FLOATING TAGS — cursor-following parallax + float
+// ══════════════════════════════════════════════════
+(function initFloatingTags() {
+  const tags = [...document.querySelectorAll('.hft')];
+  const hero = document.getElementById('hero');
+  if (!tags.length || !hero) return;
+
+  // per-tag: [float amplitude px, float freq, phase offset rad, cursor parallax strength]
+  const cfg = [
+    { amp: 9,  freq: 0.80, phase: 0.0, str: 14 },  // hft-1 Marketing
+    { amp: 7,  freq: 0.70, phase: 2.1, str: 18 },  // hft-2 Ads
+    { amp: 10, freq: 0.90, phase: 1.0, str: 12 },  // hft-3 Brand
+    { amp: 8,  freq: 0.75, phase: 3.2, str: 16 },  // hft-4 Social Media
+  ];
+
+  // smooth cursor tracking (0.5,0.5 = centre = no offset)
+  let tx = 0.5, ty = 0.5; // target
+  let cx = 0.5, cy = 0.5; // current (lerped)
+
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    tx = (e.clientX - r.left)  / r.width;
+    ty = (e.clientY - r.top)   / r.height;
+  }, { passive: true });
+  hero.addEventListener('mouseleave', () => { tx = 0.5; ty = 0.5; });
+
+  let t = 0;
+  function loop() {
+    t += 0.016;
+    // lerp cursor position for smooth lag
+    cx += (tx - cx) * 0.06;
+    cy += (ty - cy) * 0.06;
+    const dx = cx - 0.5; // -0.5 to +0.5
+    const dy = cy - 0.5;
+
+    tags.forEach((tag, i) => {
+      const c = cfg[i] || cfg[0];
+      const floatY = c.amp * Math.sin(t * c.freq + c.phase);
+      const px = dx * c.str;
+      const py = dy * c.str * 0.5;
+      tag.style.transform = `translate(${px}px, ${floatY + py}px)`;
+    });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();

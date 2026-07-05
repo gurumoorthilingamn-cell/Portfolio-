@@ -210,7 +210,7 @@ body::after{
 /* 2-column: left text, right photo */
 .hero-2col{
   display:flex;align-items:center;
-  gap:8rem;width:100%;
+  gap:6.5rem;width:100%;
   flex:1;
 }
 .hero-left{
@@ -291,7 +291,7 @@ body::after{
   position:relative;
   width:320px;height:435px;
   flex-shrink:0;
-  margin-right:2rem;
+  margin-right:4rem;
   animation:photoIn 1.1s cubic-bezier(0.22,1,0.36,1) .4s both;
 }
 @keyframes photoIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -337,11 +337,11 @@ body::after{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px)}
 }
-/* All tags float LEFT — safe from right-edge clipping */
-.hft-1{top:38px;left:-105px;animation:tagFloat 3s ease-in-out infinite}
-.hft-2{top:135px;left:-118px;animation:tagFloat 3.3s ease-in-out .4s infinite}
-.hft-3{bottom:148px;left:-100px;animation:tagFloat 2.9s ease-in-out .9s infinite}
-.hft-4{bottom:62px;left:-115px;animation:tagFloat 3.5s ease-in-out 1.3s infinite}
+/* Tags: 2 left, 2 right — JS drives float + cursor parallax */
+.hft-1{top:52px;left:-112px}
+.hft-2{bottom:160px;left:-102px}
+.hft-3{top:160px;right:-38px}
+.hft-4{bottom:62px;right:-40px}
 
 /* Decorative star */
 .hero-star-dec{
@@ -992,17 +992,17 @@ body.loaded{opacity:1}
   .edu-grid{grid-template-columns:1fr}
 }
 
-/* ── Hero collapse: wider gap shrinks at tablet ─ */
+/* ── Hero: tablet gap shrinks ─ */
 @media(max-width:1100px){
-  .hero-2col{gap:5rem}
+  .hero-2col{gap:4.5rem}
   .hero-hl{font-size:clamp(4rem,9vw,7.5rem)}
-  .hero-photo-area{width:280px;height:380px;margin-right:1rem}
+  .hero-photo-area{width:280px;height:380px;margin-right:2.5rem}
   .hero-blob{width:250px;height:250px}
   .hero-photo-img{width:265px;height:370px}
-  .hft-1{top:30px;left:-90px}
-  .hft-2{top:115px;left:-100px}
-  .hft-3{bottom:120px;left:-85px}
-  .hft-4{bottom:52px;left:-98px}
+  .hft-1{top:36px;left:-90px}
+  .hft-2{bottom:130px;left:-85px}
+  .hft-3{top:130px;right:-32px}
+  .hft-4{bottom:50px;right:-34px}
 }
 
 /* ── Mobile ─────────────────────────────── */

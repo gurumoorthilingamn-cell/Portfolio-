@@ -352,7 +352,7 @@ document.addEventListener('keydown', e => {
   ];
 
   let tx = 0.5, ty = 0.5; // target cursor 0–1
-  let cx = 0.5, cy = 0.5; // smoothed cursor
+  let cx = 0.5, cy = 0.5; // smoothed (lerped)
 
   hero.addEventListener('mousemove', e => {
     const r = hero.getBoundingClientRect();
@@ -361,26 +361,36 @@ document.addEventListener('keydown', e => {
   }, { passive: true });
   hero.addEventListener('mouseleave', () => { tx = 0.5; ty = 0.5; });
 
+  let prevNow = performance.now();
   let t = 0;
-  (function loop() {
-    t += 0.016;
-    cx += (tx - cx) * 0.07;  // smooth lag
-    cy += (ty - cy) * 0.07;
-    const dx = cx - 0.5;  // -0.5 → +0.5
+  (function loop(now) {
+    const dt = Math.min((now - prevNow) / 1000, 0.05); // seconds, capped at 50ms
+    prevNow = now;
+    t += dt;
+
+    // gentle lerp — 0.055 feels silky
+    cx += (tx - cx) * 0.055;
+    cy += (ty - cy) * 0.055;
+    const dx = cx - 0.5;
     const dy = cy - 0.5;
 
     tags.forEach((tag, i) => {
-      const c = cfg[i] || cfg[0];
-      const wave = Math.sin(t * c.freq + c.phase);
-      const floatY  = c.amp * wave;
-      const floatX  = c.amp * 0.28 * Math.sin(t * c.freq * 0.6 + c.phase + 1.4);
-      const rotate  = c.rot * Math.sin(t * c.freq * 0.45 + c.phase);
-      const scale   = 1 + 0.03 * Math.sin(t * c.freq * 1.2 + c.phase);
+      const c  = cfg[i] || cfg[0];
+      const s1 = Math.sin(t * c.freq + c.phase);
+      const s2 = Math.sin(t * c.freq * 0.6  + c.phase + 1.4);
+      const s3 = Math.sin(t * c.freq * 0.45 + c.phase);
+      const s4 = Math.sin(t * c.freq * 1.2  + c.phase);
+
+      const floatY = c.amp * s1;
+      const floatX = c.amp * 0.28 * s2;
+      const rotate = c.rot * s3;
+      const scale  = 1 + 0.028 * s4;
       const px = dx * c.str;
-      const py = dy * c.str * 0.55;
+      const py = dy * c.str * 0.52;
+
       tag.style.transform =
-        `translate(${floatX + px}px, ${floatY + py}px) rotate(${rotate}deg) scale(${scale})`;
+        `translate(${floatX + px}px,${floatY + py}px) rotate(${rotate}deg) scale(${scale})`;
     });
     requestAnimationFrame(loop);
-  })();
+  })(performance.now());
 })();

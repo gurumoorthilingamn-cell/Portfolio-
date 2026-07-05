@@ -183,17 +183,50 @@ body::after{
   z-index:0;opacity:.07;
 }
 .hero::after{
-  content:'GM.';
+  content:'GURU';
   position:absolute;
-  bottom:-4%;left:50%;transform:translateX(-50%);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
   font-family:var(--font-display);
-  font-size:clamp(18rem,30vw,28rem);
-  line-height:1;letter-spacing:.04em;
-  color:rgba(255,45,120,.038);
+  font-size:clamp(14rem,24vw,22rem);
+  line-height:1;letter-spacing:.12em;
+  color:rgba(255,45,120,.042);
+  text-shadow:
+    0 0 50px rgba(255,45,120,.12),
+    0 0 110px rgba(255,45,120,.06),
+    0 0 220px rgba(255,45,120,.03);
   pointer-events:none;z-index:0;
   user-select:none;white-space:nowrap;
+  animation:guruFlicker 9s linear infinite;
+}
+@keyframes guruFlicker{
+  0%,100%{opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06);}
+  4%      {opacity:.014;text-shadow:none}
+  5%      {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.14)}
+  20%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06)}
+  21%     {opacity:.01; text-shadow:none}
+  22%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.14)}
+  23%     {opacity:.018;text-shadow:none}
+  24%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06)}
+  52%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06)}
+  53%     {opacity:.02; text-shadow:none}
+  54%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.14)}
+  74%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06)}
+  75%     {opacity:.006;text-shadow:none}
+  76%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.14)}
+  77%     {opacity:.022;text-shadow:none}
+  78%     {opacity:.042;text-shadow:0 0 50px rgba(255,45,120,.12),0 0 110px rgba(255,45,120,.06)}
 }
 .hero>*{position:relative;z-index:1}
+
+/* Bottom fade — blends hero into the pink marquee below */
+.hero-fade-out{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:90px;
+  background:linear-gradient(to bottom,transparent,var(--cream));
+  z-index:2;pointer-events:none;
+}
 
 .hero-topbar{
   display:flex;justify-content:space-between;align-items:center;
@@ -344,6 +377,8 @@ body::after{
   box-shadow:0 8px 28px rgba(0,0,0,.24),0 2px 8px rgba(0,0,0,.12);
   z-index:2;letter-spacing:.03em;
   border:1px solid rgba(255,255,255,.08);
+  will-change:transform;
+  backface-visibility:hidden;
 }
 .hft iconify-icon{font-size:.88rem;color:var(--pink)}
 @keyframes tagFloat{

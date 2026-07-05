@@ -10,14 +10,15 @@ let cursorTick = 0;
 let cursorMode = 'default'; // default | link | image | drag | text
 let prevMode   = 'default';
 
-// Cycles through the pink palette per frame
+// Cycles through teal → cyan palette per frame
 function cursorColor(t) {
   const s  = Math.sin(t)   * 0.5 + 0.5;
   const s2 = Math.cos(t * 0.7 + 1.2) * 0.5 + 0.5;
-  const r  = Math.round(195 + 60 * s);
-  const g  = Math.round(s2 * 40);
-  const b  = Math.round(80 + 75 * (1 - s));
-  return { r, g, b, str: `rgb(${r},${g},${b})`, faint: `rgba(${r},${g},${b},.28)` };
+  // ring: animates between teal #3B939B and cyan #91F3FC
+  const r  = Math.round(59  + 86  * s2);
+  const g  = Math.round(147 + 96  * s);
+  const b  = Math.round(155 + 97  * s2);
+  return { r, g, b, str: `rgb(${r},${g},${b})`, faint: `rgba(${r},${g},${b},.5)` };
 }
 
 function detectMode(el) {
@@ -50,7 +51,7 @@ document.addEventListener('mousemove', e => {
   ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%,-50%)`;
 
   // Per-frame colour update (no transition fighting — borderWidth excluded from CSS transition)
-  dot.style.background  = c.str;
+  dot.style.background  = '#0D2E32';
   ring.style.borderColor = cursorMode === 'default' ? c.faint : c.str;
 
   // Mode class swap — CSS transitions handle the smooth size morph

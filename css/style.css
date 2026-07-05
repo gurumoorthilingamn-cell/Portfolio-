@@ -200,22 +200,22 @@ body::after{
   animation:guruFlicker 9s linear infinite;
 }
 @keyframes guruFlicker{
-  0%,100%{opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  0%,100%{opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
   4%      {opacity:.06;text-shadow:none}
-  5%      {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.5),0 0 90px rgba(255,45,120,.26)}
-  20%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  5%      {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.5),0 0 90px rgba(255,45,120,.26)}
+  20%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
   21%     {opacity:.04;text-shadow:none}
-  22%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.5)}
+  22%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.5)}
   23%     {opacity:.11;text-shadow:none}
-  24%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
-  52%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  24%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  52%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
   53%     {opacity:.05;text-shadow:none}
-  54%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.5)}
-  74%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  54%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.5)}
+  74%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
   75%     {opacity:.02;text-shadow:none}
-  76%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.5)}
+  76%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.5)}
   77%     {opacity:.10;text-shadow:none}
-  78%     {opacity:.25;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
+  78%     {opacity:.19;text-shadow:0 0 40px rgba(255,45,120,.45),0 0 90px rgba(255,45,120,.22)}
 }
 .hero>*{position:relative;z-index:1}
 
@@ -241,7 +241,7 @@ body::after{
   background:var(--pink);border-radius:50%;
   animation:blink 1.8s ease-in-out infinite;
 }
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.19}}
 
 /* ── Hero body ──────────────────────────────────── */
 .hero-body{

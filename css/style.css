@@ -150,8 +150,9 @@ body::after{
 }
 #nav-links.open li a{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(2.5rem,8vw,4rem);
-  letter-spacing:.06em;color:var(--cream);
+  letter-spacing:-.01em;color:var(--cream);
   transition:color .2s;
 }
 #nav-links.open li a:hover{color:var(--pink)}
@@ -298,7 +299,7 @@ body::after{
   font-family:var(--font-display);
   font-weight:800;
   font-size:clamp(4.5rem,10vw,9.5rem);
-  line-height:.82;letter-spacing:.02em;
+  line-height:.88;letter-spacing:-.02em;
   color:var(--text);
 }
 .hero-hl-name{
@@ -322,7 +323,8 @@ body::after{
 .hqs-item{display:flex;flex-direction:column;gap:.2rem}
 .hqs-num{
   font-family:var(--font-display);
-  font-size:clamp(2rem,4vw,3.2rem);letter-spacing:.04em;
+  font-weight:800;
+  font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em;
   color:var(--pink);line-height:1;
 }
 .hqs-lbl{
@@ -438,7 +440,8 @@ body::after{
 .hsb-item{display:flex;flex-direction:column;gap:.2rem}
 .hsb-num{
   font-family:var(--font-display);
-  font-size:clamp(1.3rem,2.5vw,1.9rem);letter-spacing:.06em;
+  font-weight:800;
+  font-size:clamp(1.3rem,2.5vw,1.9rem);letter-spacing:-.01em;
   color:var(--text);
 }
 .hsb-lbl{
@@ -470,11 +473,11 @@ body::after{
   animation:marquee 30s linear infinite;
 }
 .marquee-wrap.yellow .marquee-track span,.marquee-wrap:not(.rev) .marquee-track span{
-  font-family:var(--font-display);font-size:1.05rem;letter-spacing:.18em;
+  font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:.06em;
   color:var(--white);text-transform:uppercase;
 }
 .marquee-wrap.rev .marquee-track span{
-  font-family:var(--font-display);font-size:1.05rem;letter-spacing:.18em;
+  font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:.06em;
   color:rgba(245,240,232,.7);text-transform:uppercase;
 }
 .marquee-dot{color:rgba(255,255,255,.45);font-size:.65rem}
@@ -521,7 +524,8 @@ body::after{
 }
 .apc-mono{
   font-family:var(--font-display);
-  font-size:5rem;letter-spacing:.1em;
+  font-weight:800;
+  font-size:5rem;letter-spacing:-.02em;
   color:var(--pink);line-height:1;
 }
 .apc-name{
@@ -560,7 +564,8 @@ body::after{
 .about-stat-num{
   display:block;
   font-family:var(--font-display);
-  font-size:clamp(2.5rem,5vw,3.8rem);letter-spacing:.04em;
+  font-weight:800;
+  font-size:clamp(2.5rem,5vw,3.8rem);letter-spacing:-.02em;
   color:var(--pink);line-height:1;
 }
 .about-stat-lbl{
@@ -605,8 +610,9 @@ body::after{
 }
 .work-info h3{
   font-family:var(--font-display);
-  font-size:clamp(1.1rem,2.5vw,1.7rem);
-  letter-spacing:.04em;color:var(--text);
+  font-weight:800;
+  font-size:clamp(1.2rem,2.5vw,1.9rem);
+  letter-spacing:-.01em;color:var(--text);
   display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;
   transition:color .2s;
 }
@@ -651,8 +657,9 @@ body::after{
 .gs-item{text-align:right}
 .gs-num{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(1.6rem,3vw,2.2rem);
-  color:var(--pink);line-height:1;
+  color:var(--pink);line-height:1;letter-spacing:-.01em;
 }
 .gs-lbl{
   font-family:var(--font-mono);font-size:.54rem;letter-spacing:.14em;
@@ -726,7 +733,8 @@ body::after{
 .number-val{
   display:block;
   font-family:var(--font-display);
-  font-size:clamp(3rem,7vw,5.5rem);letter-spacing:.04em;
+  font-weight:800;
+  font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-.02em;
   color:var(--white);line-height:1;margin-bottom:.5rem;
 }
 .number-lbl{
@@ -759,7 +767,8 @@ body::after{
 .service-row:hover::before{width:100%}
 .service-name{
   font-family:var(--font-display);
-  font-size:clamp(1.2rem,3vw,2.1rem);letter-spacing:.06em;
+  font-weight:800;
+  font-size:clamp(1.3rem,3vw,2.2rem);letter-spacing:-.01em;
   color:var(--cream);transition:color .2s;
 }
 .service-row:hover .service-name{color:var(--pink)}
@@ -788,7 +797,8 @@ body::after{
 .skill-group:hover{border-color:var(--pink);box-shadow:0 4px 16px rgba(59,147,155,.08)}
 .skill-group-name{
   font-family:var(--font-display);
-  font-size:1.05rem;letter-spacing:.1em;
+  font-weight:800;
+  font-size:1.1rem;letter-spacing:.01em;
   color:var(--pink);
   margin-bottom:1rem;padding-bottom:.7rem;
   border-bottom:1.5px solid var(--border);
@@ -828,8 +838,9 @@ body::after{
 }
 .edu-name{
   font-family:var(--font-display);
-  font-size:clamp(1.3rem,2.5vw,1.8rem);
-  letter-spacing:.04em;color:var(--text);
+  font-weight:800;
+  font-size:clamp(1.3rem,2.5vw,1.9rem);
+  letter-spacing:-.01em;color:var(--text);
   margin-bottom:.4rem;
 }
 .edu-year{
@@ -873,7 +884,8 @@ body::after{
 }
 .contact-email{
   font-family:var(--font-display);
-  font-size:clamp(1.2rem,2.5vw,1.9rem);letter-spacing:.04em;
+  font-weight:700;
+  font-size:clamp(1.2rem,2.5vw,1.9rem);letter-spacing:-.01em;
   color:var(--cream);transition:color .2s;
 }
 .contact-email:hover{color:var(--pink)}

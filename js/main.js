@@ -336,49 +336,51 @@ document.addEventListener('keydown', e => {
 });
 
 // ══════════════════════════════════════════════════
-//  FLOATING TAGS — cursor-following parallax + float
+//  FLOATING TAGS — cursor parallax + organic float
 // ══════════════════════════════════════════════════
 (function initFloatingTags() {
   const tags = [...document.querySelectorAll('.hft')];
   const hero = document.getElementById('hero');
   if (!tags.length || !hero) return;
 
-  // per-tag: [float amplitude px, float freq, phase offset rad, cursor parallax strength]
+  // amp=float height, freq=speed, phase=offset, str=cursor pull, rot=max rotation°
   const cfg = [
-    { amp: 9,  freq: 0.80, phase: 0.0, str: 14 },  // hft-1 Marketing
-    { amp: 7,  freq: 0.70, phase: 2.1, str: 18 },  // hft-2 Ads
-    { amp: 10, freq: 0.90, phase: 1.0, str: 12 },  // hft-3 Brand
-    { amp: 8,  freq: 0.75, phase: 3.2, str: 16 },  // hft-4 Social Media
+    { amp:14, freq:0.70, phase:0.0, str:20, rot:3.0 },  // Marketing
+    { amp:11, freq:0.60, phase:2.1, str:26, rot:2.5 },  // Ads
+    { amp:16, freq:0.80, phase:1.0, str:18, rot:3.5 },  // Brand
+    { amp:12, freq:0.65, phase:3.2, str:24, rot:2.8 },  // Social Media
   ];
 
-  // smooth cursor tracking (0.5,0.5 = centre = no offset)
-  let tx = 0.5, ty = 0.5; // target
-  let cx = 0.5, cy = 0.5; // current (lerped)
+  let tx = 0.5, ty = 0.5; // target cursor 0–1
+  let cx = 0.5, cy = 0.5; // smoothed cursor
 
   hero.addEventListener('mousemove', e => {
     const r = hero.getBoundingClientRect();
-    tx = (e.clientX - r.left)  / r.width;
-    ty = (e.clientY - r.top)   / r.height;
+    tx = (e.clientX - r.left) / r.width;
+    ty = (e.clientY - r.top)  / r.height;
   }, { passive: true });
   hero.addEventListener('mouseleave', () => { tx = 0.5; ty = 0.5; });
 
   let t = 0;
-  function loop() {
+  (function loop() {
     t += 0.016;
-    // lerp cursor position for smooth lag
-    cx += (tx - cx) * 0.06;
-    cy += (ty - cy) * 0.06;
-    const dx = cx - 0.5; // -0.5 to +0.5
+    cx += (tx - cx) * 0.07;  // smooth lag
+    cy += (ty - cy) * 0.07;
+    const dx = cx - 0.5;  // -0.5 → +0.5
     const dy = cy - 0.5;
 
     tags.forEach((tag, i) => {
       const c = cfg[i] || cfg[0];
-      const floatY = c.amp * Math.sin(t * c.freq + c.phase);
+      const wave = Math.sin(t * c.freq + c.phase);
+      const floatY  = c.amp * wave;
+      const floatX  = c.amp * 0.28 * Math.sin(t * c.freq * 0.6 + c.phase + 1.4);
+      const rotate  = c.rot * Math.sin(t * c.freq * 0.45 + c.phase);
+      const scale   = 1 + 0.03 * Math.sin(t * c.freq * 1.2 + c.phase);
       const px = dx * c.str;
-      const py = dy * c.str * 0.5;
-      tag.style.transform = `translate(${px}px, ${floatY + py}px)`;
+      const py = dy * c.str * 0.55;
+      tag.style.transform =
+        `translate(${floatX + px}px, ${floatY + py}px) rotate(${rotate}deg) scale(${scale})`;
     });
     requestAnimationFrame(loop);
-  }
-  loop();
+  })();
 })();

@@ -182,6 +182,17 @@ body::after{
   position:absolute;inset:0;width:100%;height:100%;
   z-index:0;opacity:.07;
 }
+.hero::after{
+  content:'GM.';
+  position:absolute;
+  bottom:-4%;left:50%;transform:translateX(-50%);
+  font-family:var(--font-display);
+  font-size:clamp(18rem,30vw,28rem);
+  line-height:1;letter-spacing:.04em;
+  color:rgba(255,45,120,.038);
+  pointer-events:none;z-index:0;
+  user-select:none;white-space:nowrap;
+}
 .hero>*{position:relative;z-index:1}
 
 .hero-topbar{
@@ -207,14 +218,16 @@ body::after{
   padding:1rem 0 1rem;
 }
 
-/* 2-column: left text, right photo */
+/* 2-column: left text, right photo — centred pair */
 .hero-2col{
   display:flex;align-items:center;
-  gap:6.5rem;width:100%;
+  justify-content:center;
+  gap:6rem;width:100%;
   flex:1;
 }
 .hero-left{
-  flex:1;min-width:0;
+  flex:0 0 auto;
+  width:clamp(360px,40%,520px);
   display:flex;flex-direction:column;
   gap:2.4rem;
 }
@@ -338,10 +351,10 @@ body::after{
   50%{transform:translateY(-10px)}
 }
 /* Tags: 2 left, 2 right — JS drives float + cursor parallax */
-.hft-1{top:52px;left:-112px}
-.hft-2{bottom:160px;left:-102px}
-.hft-3{top:160px;right:-38px}
-.hft-4{bottom:62px;right:-40px}
+.hft-1{top:55px;left:-118px}
+.hft-2{bottom:155px;left:-108px}
+.hft-3{top:155px;right:-92px}
+.hft-4{bottom:58px;right:-98px}
 
 /* Decorative star */
 .hero-star-dec{
@@ -992,17 +1005,18 @@ body.loaded{opacity:1}
   .edu-grid{grid-template-columns:1fr}
 }
 
-/* ── Hero: tablet gap shrinks ─ */
+/* ── Hero: tablet ─ */
 @media(max-width:1100px){
-  .hero-2col{gap:4.5rem}
+  .hero-2col{gap:4rem}
+  .hero-left{width:clamp(320px,38%,440px)}
   .hero-hl{font-size:clamp(4rem,9vw,7.5rem)}
-  .hero-photo-area{width:280px;height:380px;margin-right:2.5rem}
-  .hero-blob{width:250px;height:250px}
-  .hero-photo-img{width:265px;height:370px}
-  .hft-1{top:36px;left:-90px}
-  .hft-2{bottom:130px;left:-85px}
-  .hft-3{top:130px;right:-32px}
-  .hft-4{bottom:50px;right:-34px}
+  .hero-photo-area{width:275px;height:370px;margin-right:2.5rem}
+  .hero-blob{width:245px;height:245px}
+  .hero-photo-img{width:260px;height:362px}
+  .hft-1{top:36px;left:-88px}
+  .hft-2{bottom:125px;left:-82px}
+  .hft-3{top:125px;right:-75px}
+  .hft-4{bottom:48px;right:-80px}
 }
 
 /* ── Mobile ─────────────────────────────── */

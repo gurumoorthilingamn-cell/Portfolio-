@@ -149,7 +149,7 @@
 
     // Inner subtle ring
     ctx.globalAlpha = 0.1;
-    ctx.strokeStyle = '#F5F0E8';
+    ctx.strokeStyle = '#C9FBFF';
     ctx.lineWidth   = 1;
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, ro * 0.52, 0, Math.PI * 2);
@@ -171,7 +171,7 @@
       rp.alpha  -= 0.019;
       if (rp.alpha <= 0) { ripples.splice(i, 1); continue; }
       ctx.globalAlpha = rp.alpha;
-      ctx.strokeStyle = '#FF2D78';
+      ctx.strokeStyle = '#3B939B';
       ctx.lineWidth   = 1.2;
       ctx.beginPath();
       ctx.arc(rp.x, rp.y, rp.radius, 0, Math.PI * 2);

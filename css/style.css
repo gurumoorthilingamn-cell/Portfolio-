@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 @import 'variables.css';
 
 /* ═══════════ RESET ═══════════ */
@@ -91,7 +91,8 @@ body::after{
 }
 .nav-logo{
   font-family:var(--font-display);
-  font-size:2rem;letter-spacing:.1em;
+  font-weight:800;
+  font-size:2rem;letter-spacing:.04em;
   color:var(--text);
   transition:color .2s;
 }
@@ -295,8 +296,9 @@ body::after{
 }
 .hero-hl{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(4.5rem,10vw,9.5rem);
-  line-height:.82;letter-spacing:.04em;
+  line-height:.82;letter-spacing:.02em;
   color:var(--text);
 }
 .hero-hl-name{
@@ -543,14 +545,15 @@ body::after{
 .about-right{padding-top:1rem}
 .about-headline{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(2rem,4.5vw,3.8rem);
-  letter-spacing:.03em;line-height:.95;
+  letter-spacing:.01em;line-height:1;
   color:var(--text);margin-bottom:1.5rem;
 }
 .about-headline .acc{color:var(--pink)}
 .about-text{
   font-size:1rem;line-height:1.8;
-  color:#4a3535;max-width:580px;
+  color:var(--text);max-width:580px;
   margin-bottom:2.5rem;
 }
 .about-stats{display:flex;gap:3rem;flex-wrap:wrap}
@@ -639,8 +642,9 @@ body::after{
 }
 .gallery-big-title{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(3rem,8vw,6rem);
-  line-height:.88;letter-spacing:.02em;color:var(--text);
+  line-height:.92;letter-spacing:.01em;color:var(--text);
 }
 .gallery-big-title .acc{color:var(--pink)}
 .gallery-stats{display:flex;gap:2.5rem}
@@ -852,8 +856,9 @@ body::after{
 .contact-section .section-label::before{border-color:rgba(245,240,232,.2);color:rgba(245,240,232,.4)}
 .contact-headline{
   font-family:var(--font-display);
+  font-weight:800;
   font-size:clamp(3rem,9vw,8rem);
-  line-height:.88;letter-spacing:.02em;
+  line-height:.9;letter-spacing:.01em;
   margin:1.5rem 0 3rem;
 }
 .contact-headline .y{color:var(--pink)}
